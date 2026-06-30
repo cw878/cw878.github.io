@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phoenix CleanTech Ltd — Green Finance &amp; Energy Transition Advisory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#1C3327;
+  --forest-deep:#142319;
+  --moss:#5C7A5C;
+  --sage:#A9BFA4;
+  --clay:#B95E33;
+  --gold:#C99A4A;
+  --paper:#F3EFE3;
+  --paper-warm:#EBE4D2;
+  --ink:#1A1812;
+  --line:rgba(26,24,18,0.14);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Public Sans', sans-serif;
+  font-size:16px;
+  line-height:1.55;
+}
+h1,h2,h3,.display{
+  font-family:'Fraunces', serif;
+  font-weight:500;
+  letter-spacing:-0.01em;
+  margin:0;
+}
+.eyebrow{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:0.72rem;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--moss);
+}
+a{color:inherit;}
+img,svg{display:block;}
+
+/* ===== HORIZON SIGNATURE MOTIF ===== */
+.horizon{width:100%;height:auto;display:block;}
+
+/* ===== NAV ===== */
+.nav{
+  position:sticky; top:0; z-index:50;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:1.1rem clamp(1.25rem,4vw,3rem);
+  background:rgba(243,239,227,0.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.brand{display:flex;align-items:center;gap:0.6rem;cursor:pointer;}
+.brand-mark{width:30px;height:30px;}
+.brand-name{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;letter-spacing:-0.01em;}
+.brand-name span{color:var(--clay);}
+.nav-links{display:flex;gap:clamp(1rem,2vw,2.2rem);font-size:0.92rem;}
+.nav-links button{
+  background:none;border:none;cursor:pointer;font-family:'Public Sans',sans-serif;
+  font-size:0.92rem;color:var(--ink);padding:0.3rem 0;position:relative;
+}
+.nav-links button.active{color:var(--forest);font-weight:600;}
+.nav-links button.active::after{
+  content:'';position:absolute;left:0;right:0;bottom:-3px;height:2px;background:var(--clay);
+}
+.nav-cta{
+  font-family:'IBM Plex Mono',monospace;font-size:0.78rem;
+  background:var(--forest);color:var(--paper);
+  padding:0.55rem 1.1rem;border-radius:2px;cursor:pointer;border:none;
+  letter-spacing:0.02em;
+}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;}
+
+/* ===== LAYOUT WRAPPER ===== */
+.page{display:none;}
+.page.active{display:block;animation:fade .4s ease;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem);}
+
+/* ===== HERO ===== */
+.hero{
+  background:var(--forest);
+  color:var(--paper);
+  position:relative;
+  overflow:hidden;
+  padding:clamp(3.5rem,8vw,6rem) 0 0 0;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.15fr 0.85fr;gap:3rem;align-items:end;
+  padding-bottom:3rem;
+}
+.hero-eyebrow{color:var(--sage);font-family:'IBM Plex Mono',monospace;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:1.1rem;}
+.hero h1{
+  font-size:clamp(2.4rem,5vw,3.9rem);
+  line-height:1.04;
+  font-weight:500;
+}
+.hero h1 em{font-style:italic;color:var(--gold);font-weight:400;}
+.hero-sub{
+  font-size:1.05rem;color:var(--sage);max-width:30ch;align-self:start;
+  padding-top:0.6rem;
+  border-top:1px solid rgba(255,255,255,0.18);
+}
+.hero-actions{display:flex;gap:0.9rem;margin-top:2rem;flex-wrap:wrap;}
+.btn-primary{
+  background:var(--clay);color:var(--paper);border:none;padding:0.85rem 1.5rem;
+  font-family:'IBM Plex Mono',monospace;font-size:0.82rem;letter-spacing:0.03em;
+  cursor:pointer;border-radius:2px;
+}
+.btn-ghost{
+  background:transparent;color:var(--paper);border:1px solid rgba(255,255,255,0.35);
+  padding:0.85rem 1.5rem;font-family:'IBM Plex Mono',monospace;font-size:0.82rem;
+  cursor:pointer;border-radius:2px;
+}
+.hero-horizon{margin-top:2.5rem;}
+
+/* ===== STAT STRIP ===== */
+.stat-strip{
+  background:var(--forest-deep);color:var(--paper);
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid rgba(255,255,255,0.1);
+}
+.stat{padding:1.6rem 1.4rem;border-right:1px solid rgba(255,255,255,0.1);}
+.stat:last-child{border-right:none;}
+.stat .num{font-family:'Fraunces',serif;font-size:1.7rem;color:var(--gold);}
+.stat .label{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--sage);margin-top:0.3rem;}
+
+/* ===== SECTIONS ===== */
+section.block{padding:clamp(3.5rem,7vw,5.5rem) 0;}
+.section-head{display:grid;grid-template-columns:1fr 1.4fr;gap:2.5rem;margin-bottom:2.8rem;align-items:end;border-bottom:1px solid var(--line);padding-bottom:1.6rem;}
+.section-head h2{font-size:clamp(1.7rem,3vw,2.4rem);}
+.section-head p{color:#4a473d;max-width:48ch;}
+
+/* services grid */
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+.svc-card{background:var(--paper);padding:2rem;}
+.svc-tag{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--clay);letter-spacing:0.08em;text-transform:uppercase;}
+.svc-card h3{font-size:1.3rem;margin:0.6rem 0 0.7rem;}
+.svc-card p{color:#4a473d;font-size:0.95rem;}
+
+/* approach / process */
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+.process-item{border-top:2px solid var(--moss);padding-top:1rem;}
+.process-item .pn{font-family:'IBM Plex Mono',monospace;color:var(--clay);font-size:0.78rem;}
+.process-item h4{font-family:'Fraunces',serif;font-size:1.1rem;margin:0.4rem 0;}
+.process-item p{font-size:0.88rem;color:#4a473d;}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:3rem;align-items:start;}
+.about-card{background:var(--forest);color:var(--paper);padding:2.2rem;border-radius:3px;}
+.about-card .role{color:var(--gold);font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:0.3rem;}
+.about-card h3{font-size:1.5rem;margin-bottom:0.9rem;}
+.about-card ul{list-style:none;padding:0;margin:1.2rem 0 0;font-size:0.88rem;color:var(--sage);}
+.about-card li{padding:0.4rem 0;border-top:1px solid rgba(255,255,255,0.12);}
+.about-body p{margin:0 0 1.1rem;color:#36331f;}
+.about-body p:first-child{font-family:'Fraunces',serif;font-size:1.25rem;font-style:italic;color:var(--forest);line-height:1.4;}
+
+/* focus areas */
+.focus-list{display:flex;flex-direction:column;border-top:1px solid var(--line);}
+.focus-row{display:grid;grid-template-columns:120px 1fr 160px;gap:1.5rem;padding:1.3rem 0;border-bottom:1px solid var(--line);align-items:center;}
+.focus-row .fnum{font-family:'IBM Plex Mono',monospace;color:var(--moss);font-size:0.85rem;}
+.focus-row h4{font-family:'Fraunces',serif;font-size:1.15rem;}
+.focus-row .floc{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--clay);text-align:right;text-transform:uppercase;letter-spacing:0.04em;}
+
+/* contact */
+.contact-wrap{background:var(--paper-warm);border:1px solid var(--line);border-radius:3px;padding:clamp(2rem,4vw,3.2rem);display:grid;grid-template-columns:1fr 1fr;gap:3rem;}
+.contact-info h2{font-size:1.9rem;margin-bottom:1rem;}
+.contact-info p{color:#4a473d;margin-bottom:1.6rem;}
+.contact-detail{display:flex;flex-direction:column;gap:0.9rem;font-size:0.92rem;}
+.contact-detail div{border-top:1px solid var(--line);padding-top:0.8rem;}
+.contact-detail .clabel{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;text-transform:uppercase;color:var(--moss);letter-spacing:0.06em;}
+form{display:flex;flex-direction:column;gap:1rem;}
+.field label{display:block;font-family:'IBM Plex Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--moss);margin-bottom:0.4rem;}
+.field input,.field select,.field textarea{
+  width:100%;padding:0.75rem 0.8rem;border:1px solid var(--line);background:var(--paper);
+  font-family:'Public Sans',sans-serif;font-size:0.95rem;border-radius:2px;color:var(--ink);
+}
+.field textarea{resize:vertical;min-height:90px;}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--moss);outline-offset:1px;}
+.submit-btn{
+  background:var(--clay);color:var(--paper);border:none;padding:0.9rem;
+  font-family:'IBM Plex Mono',monospace;font-size:0.82rem;cursor:pointer;border-radius:2px;margin-top:0.3rem;
+}
+.form-note{font-size:0.78rem;color:#6b6852;margin-top:-0.3rem;}
+.success-msg{display:none;background:var(--forest);color:var(--paper);padding:1rem;border-radius:2px;font-size:0.9rem;}
+
+/* footer */
+footer{background:var(--forest-deep);color:var(--sage);padding:2.5rem 0 1.6rem;margin-top:2rem;}
+.footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:1.8rem;}
+.footer-brand{font-family:'Fraunces',serif;color:var(--paper);font-size:1.1rem;}
+.footer-cols{display:flex;gap:3rem;}
+.footer-cols div{font-size:0.85rem;}
+.footer-cols .ftitle{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--gold);margin-bottom:0.6rem;}
+.footer-cols a{display:block;padding:0.2rem 0;text-decoration:none;color:var(--sage);}
+.footer-bottom{display:flex;justify-content:space-between;padding-top:1.2rem;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:#6f7d6f;flex-wrap:wrap;gap:0.5rem;}
+
+@media (max-width:860px){
+  .nav-links{display:none;}
+  .menu-toggle{display:block;}
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-sub{border-top:none;padding-top:0;}
+  .stat-strip{grid-template-columns:repeat(2,1fr);}
+  .stat:nth-child(2){border-right:none;}
+  .svc-grid{grid-template-columns:1fr;}
+  .process{grid-template-columns:repeat(2,1fr);}
+  .section-head{grid-template-columns:1fr;}
+  .about-grid{grid-template-columns:1fr;}
+  .focus-row{grid-template-columns:1fr;gap:0.3rem;}
+  .focus-row .floc{text-align:left;}
+  .contact-wrap{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="brand" onclick="goPage('home')">
+    <svg class="brand-mark" viewBox="0 0 30 30" fill="none">
+      <path d="M15 27c6-2 9-7 9-12 0-3-1.5-5.5-3-7.5C19.5 5 17 3 15 1c-2 2-4.5 4-6 6.5C7.5 9.5 6 12 6 15c0 5 3 10 9 12z" fill="#C99A4A"/>
+      <path d="M15 23c3.5-1.3 5-4.3 5-7.2 0-3.3-2.5-6-5-9.8-2.5 3.8-5 6.5-5 9.8 0 2.9 1.5 5.9 5 7.2z" fill="#1C3327"/>
+    </svg>
+    <div class="brand-name"><span>Phoenix</span> CleanTech</div>
+  </div>
+  <div class="nav-links" id="navLinks">
+    <button onclick="goPage('home')" data-page="home" class="active">Home</button>
+    <button onclick="goPage('services')" data-page="services">Services</button>
+    <button onclick="goPage('about')" data-page="about">About</button>
+    <button onclick="goPage('contact')" data-page="contact">Contact</button>
+  </div>
+  <button class="nav-cta" onclick="goPage('contact')">Start a conversation</button>
+</nav>
+
+<!-- ================= HOME ================= -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="hero-eyebrow">Green finance &amp; AI advisory</div>
+        <h1>Helping public bodies turn<br><em>net zero ambition</em><br>into delivered projects.</h1>
+      </div>
+      <div class="hero-sub">
+        Independent advisory for local authorities, housing associations and community energy organisations — from business case to commissioning.
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="goPage('contact')">Book an introductory call</button>
+        <button class="btn-ghost" onclick="goPage('services')">See how we help</button>
+      </div>
+    </div>
+    <div class="wrap hero-horizon">
+      <svg class="horizon" viewBox="0 0 1160 90" preserveAspectRatio="none">
+        <polyline points="0,70 120,70 160,30 200,70 340,70 400,15 460,70 600,70 650,45 700,70 880,70 930,20 980,70 1160,70" fill="none" stroke="#5C7A5C" stroke-width="1.4"/>
+        <circle cx="160" cy="30" r="3" fill="#C99A4A"/>
+        <circle cx="400" cy="15" r="3" fill="#C99A4A"/>
+        <circle cx="650" cy="45" r="3" fill="#C99A4A"/>
+        <circle cx="930" cy="20" r="3" fill="#C99A4A"/>
+      </svg>
+    </div>
+  </section>
+
+  <div class="stat-strip">
+    <div class="stat"><div class="num">End-to-End</div><div class="label">Origination to delivery</div></div>
+    <div class="stat"><div class="num">Solar / Wind / BESS</div><div class="label">Technology coverage</div></div>
+    <div class="stat"><div class="num">Independent</div><div class="label">Advisory, no vendor ties</div></div>
+    <div class="stat"><div class="num">Public Sector</div><div class="label">Local delivery focus</div></div>
+  </div>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">What we do</div>
+        <h2>Three ways we work with public and community bodies</h2>
+      </div>
+      <div class="svc-grid">
+        <div class="svc-card">
+          <div class="svc-tag">Advisory</div>
+          <h3>Green finance &amp; business case support</h3>
+          <p>Funding strategy, due diligence and investment cases for renewables and retrofit programmes — built to withstand committee and funder scrutiny.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-tag">Delivery</div>
+          <h3>Renewables project development</h3>
+          <p>Origination through to asset management for solar, onshore wind and battery storage — drawing on EPC and transaction experience across multiple markets.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-tag">Community</div>
+          <h3>Local energy programme set-up</h3>
+          <p>Practical support to launch and run community energy structures, including Energy Local-style clubs that share the benefit of local generation directly with residents.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-tag">AI &amp; data</div>
+          <h3>Applied AI for energy management</h3>
+          <p>Pragmatic AI tooling for monitoring, reporting and forecasting — sized for organisations without an in-house data team.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">How we work</div>
+        <h2>A clear path from idea to commissioned asset</h2>
+      </div>
+      <div class="process">
+        <div class="process-item"><div class="pn">Stage 1</div><h4>Scope &amp; appraise</h4><p>Understand the asset, site or programme and test it against funding and policy realities.</p></div>
+        <div class="process-item"><div class="pn">Stage 2</div><h4>Structure the case</h4><p>Build the financial and governance case your committee or board needs to say yes.</p></div>
+        <div class="process-item"><div class="pn">Stage 3</div><h4>Support procurement</h4><p>Help select and manage delivery partners, from EPC contractors to technology suppliers.</p></div>
+        <div class="process-item"><div class="pn">Stage 4</div><h4>Hand over &amp; monitor</h4><p>Set up the reporting and AI-assisted monitoring needed to keep the asset accountable long after switch-on.</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= SERVICES ================= -->
+<div class="page" id="page-services">
+  <section class="block" style="padding-top:3rem;">
+    <div class="wrap">
+      <div class="hero-eyebrow" style="color:var(--moss);">Services</div>
+      <h1 style="font-size:clamp(2rem,4vw,2.8rem);max-width:18ch;">Advisory built around how the public sector actually procures and decides.</h1>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:0;">
+    <div class="wrap">
+      <div class="focus-list">
+        <div class="focus-row">
+          <div class="fnum">01</div>
+          <div><h4>Green finance &amp; investment advisory</h4><p style="margin:0.3rem 0 0;color:#4a473d;font-size:0.92rem;">Funding strategy, grant and blended-finance structuring, and investment-grade business cases for renewables, retrofit and storage projects.</p></div>
+          <div class="floc">Councils · RSLs</div>
+        </div>
+        <div class="focus-row">
+          <div class="fnum">02</div>
+          <div><h4>Renewables project development</h4><p style="margin:0.3rem 0 0;color:#4a473d;font-size:0.92rem;">Site origination, technical and commercial due diligence, EPC procurement support and asset management for solar, onshore wind and battery storage.</p></div>
+          <div class="floc">IPPs · Landowners</div>
+        </div>
+        <div class="focus-row">
+          <div class="fnum">03</div>
+          <div><h4>Community energy programmes</h4><p style="margin:0.3rem 0 0;color:#4a473d;font-size:0.92rem;">Designing and launching local energy-sharing models, including Energy Local Club structures, so communities benefit directly from nearby generation.</p></div>
+          <div class="floc">Community Orgs</div>
+        </div>
+        <div class="focus-row">
+          <div class="fnum">04</div>
+          <div><h4>Applied AI &amp; data tooling</h4><p style="margin:0.3rem 0 0;color:#4a473d;font-size:0.92rem;">Right-sized AI for energy monitoring, reporting automation and forecasting, without the overhead of an enterprise platform.</p></div>
+          <div class="floc">All Clients</div>
+        </div>
+        <div class="focus-row">
+          <div class="fnum">05</div>
+          <div><h4>Due diligence &amp; transaction support</h4><p style="margin:0.3rem 0 0;color:#4a473d;font-size:0.92rem;">Independent technical and financial review for organisations assessing renewables transactions, partnerships or acquisitions.</p></div>
+          <div class="floc">Investors · Boards</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:0;">
+    <div class="wrap" style="background:var(--forest);color:var(--paper);padding:2.5rem clamp(1.5rem,4vw,3rem);border-radius:3px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;">
+      <div>
+        <h3 style="font-size:1.5rem;margin-bottom:0.4rem;">Not sure which of these fits your situation?</h3>
+        <p style="color:var(--sage);margin:0;max-width:50ch;">A short introductory call is usually enough to work out where to start.</p>
+      </div>
+      <button class="btn-primary" onclick="goPage('contact')">Book a call</button>
+    </div>
+  </section>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<div class="page" id="page-about">
+  <section class="block" style="padding-top:3rem;">
+    <div class="wrap">
+      <div class="hero-eyebrow" style="color:var(--moss);">About</div>
+      <h1 style="font-size:clamp(2rem,4vw,2.8rem);max-width:20ch;">Built on hands-on renewables delivery, not just advisory theory.</h1>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:0;">
+    <div class="wrap about-grid">
+      <div class="about-card">
+        <div class="role">Founder</div>
+        <h3>Cailong "Phoenix" Wang</h3>
+        <ul>
+          <li>Head of Renewables, Mycelium (Greek IPP)</li>
+          <li>Prior roles: Gulermak, Samba Solar, PowerChina</li>
+          <li>Origination · Due diligence · EPC · Asset management</li>
+        </ul>
+      </div>
+      <div class="about-body">
+        <p>Phoenix CleanTech exists because public bodies are being asked to deliver net zero outcomes with finance, procurement and technical expertise they often can't justify hiring in-house.</p>
+        <p>Phoenix CleanTech Ltd was founded to close that gap — bringing private-sector renewables and finance discipline to councils, housing associations and community energy groups.</p>
+        <p>The practice is led by Cailong Wang, who leads solar, onshore wind and battery storage strategy as Head of Renewables at Mycelium, a Greek independent power producer. His background spans operational roles at Gulermak, Samba Solar and PowerChina covering origination, due diligence, EPC delivery, asset management and transactions.</p>
+        <p>That combination — capital markets fluency and on-the-ground project delivery — is what's applied to every engagement, whether it's a funding strategy for a council retrofit programme or the launch of a community energy club.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Local roots</div>
+        <h2>Local roots, applied locally</h2>
+      </div>
+      <p style="max-width:62ch;color:#4a473d;">Phoenix CleanTech works closely with local energy and community ecosystems to make sure advice reflects how projects actually get funded and delivered — not generic best practice imported from elsewhere.</p>
+    </div>
+  </section>
+</div>
+
+<!-- ================= CONTACT ================= -->
+<div class="page" id="page-contact">
+  <section class="block" style="padding-top:3rem;">
+    <div class="wrap">
+      <div class="contact-wrap">
+        <div class="contact-info">
+          <div class="eyebrow">Get in touch</div>
+          <h2>Let's talk about your project</h2>
+          <p>Whether it's an early-stage idea or a programme already in motion, an introductory conversation costs nothing and usually clarifies the next step quickly.</p>
+          <div class="contact-detail">
+            <div><div class="clabel">Email</div>hello@phoenixcleantech.com</div>
+            <div><div class="clabel">Based in</div>United Kingdom</div>
+            <div><div class="clabel">Coverage</div>UK-wide, with projects considered further afield</div>
+          </div>
+        </div>
+        <div>
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" required>
+            </div>
+            <div class="field">
+              <label for="org">Organisation</label>
+              <input type="text" id="org">
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" required>
+            </div>
+            <div class="field">
+              <label for="topic">What's this about</label>
+              <select id="topic">
+                <option>Green finance / business case support</option>
+                <option>Renewables project development</option>
+                <option>Community energy programme</option>
+                <option>AI &amp; data tooling</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send message</button>
+            <p class="form-note">This form is a placeholder — connect it to your inbox or a service like Formspree before going live.</p>
+            <div class="success-msg" id="successMsg">Thanks — this is a demo form, so nothing was actually sent yet.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">Phoenix CleanTech Ltd</div>
+      <div class="footer-cols">
+        <div>
+          <div class="ftitle">Site</div>
+          <a onclick="goPage('home')" href="javascript:void(0)">Home</a>
+          <a onclick="goPage('services')" href="javascript:void(0)">Services</a>
+          <a onclick="goPage('about')" href="javascript:void(0)">About</a>
+          <a onclick="goPage('contact')" href="javascript:void(0)">Contact</a>
+        </div>
+        <div>
+          <div class="ftitle">Contact</div>
+          <a href="javascript:void(0)">hello@phoenixcleantech.com</a>
+          <a href="javascript:void(0)">United Kingdom</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Phoenix CleanTech Ltd. Registered in Scotland.</div>
+      <div>Green finance &amp; energy transition advisory</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function goPage(name){
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  document.querySelectorAll('.nav-links button').forEach(b => b.classList.toggle('active', b.dataset.page === name));
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+function handleSubmit(e){
+  e.preventDefault();
+  document.getElementById('successMsg').style.display = 'block';
+  document.getElementById('contactForm').reset();
+}
+</script>
+
+</body>
+</html>
