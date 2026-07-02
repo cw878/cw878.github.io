@@ -3,236 +3,343 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Phoenix CleanTech Ltd — Green Finance &amp; Energy Transition Advisory</title>
+<title>Phoenix CleanTech Ltd — Green Finance & Energy Transition</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Public+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
   --forest:#1C3327;
-  --forest-deep:#142319;
+  --forest-deep:#0F1E15;
+  --forest-mid:#243D2E;
   --moss:#5C7A5C;
   --sage:#A9BFA4;
   --clay:#B95E33;
   --gold:#C99A4A;
-  --paper:#F3EFE3;
-  --paper-warm:#EBE4D2;
+  --paper:#F5F1E8;
+  --paper-warm:#EDE6D3;
   --ink:#1A1812;
-  --line:rgba(26,24,18,0.14);
+  --ink-light:#4A4740;
+  --line:rgba(26,24,18,0.12);
+  --line-light:rgba(26,24,18,0.07);
 }
-*{box-sizing:border-box;}
+*{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:'Public Sans', sans-serif;
-  font-size:16px;
-  line-height:1.55;
-}
-h1,h2,h3,.display{
-  font-family:'Lora', serif;
-  font-weight:500;
-  letter-spacing:-0.01em;
-  margin:0;
-}
-.eyebrow{
-  font-family:'IBM Plex Mono', monospace;
-  font-size:0.72rem;
-  letter-spacing:0.12em;
-  text-transform:uppercase;
-  color:var(--moss);
-}
-a{color:inherit;}
+body{background:var(--paper);color:var(--ink);font-family:'Public Sans',sans-serif;font-size:16px;line-height:1.6;}
+h1,h2,h3,h4{font-family:'Lora',serif;font-weight:500;letter-spacing:-0.015em;line-height:1.15;}
+p{line-height:1.65;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;}
 img,svg{display:block;}
 
-/* ===== HORIZON SIGNATURE MOTIF ===== */
-.horizon{width:100%;height:auto;display:block;}
-
-/* ===== NAV ===== */
+/* ── NAV ── */
 .nav{
-  position:sticky; top:0; z-index:50;
-  display:flex; align-items:center; justify-content:space-between;
-  padding:1.1rem clamp(1.25rem,4vw,3rem);
-  background:rgba(243,239,227,0.92);
-  backdrop-filter:blur(8px);
+  position:sticky;top:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(1.5rem,5vw,4rem);
+  height:64px;
+  background:rgba(245,241,232,0.95);
+  backdrop-filter:blur(12px);
   border-bottom:1px solid var(--line);
 }
-.brand{display:flex;align-items:center;gap:0.6rem;cursor:pointer;}
-.brand-mark{width:30px;height:30px;}
-.brand-name{font-family:'Lora', serif;font-size:1.05rem;font-weight:600;letter-spacing:-0.01em;}
+.brand{display:flex;align-items:center;gap:0.75rem;cursor:pointer;}
+.brand svg{width:26px;height:33px;}
+.brand-name{font-family:'Lora',serif;font-size:1rem;font-weight:600;letter-spacing:-0.01em;}
 .brand-name span{color:var(--clay);}
-.nav-links{display:flex;gap:clamp(1rem,2vw,2.2rem);font-size:0.92rem;}
+.nav-links{display:flex;gap:2rem;}
 .nav-links button{
-  background:none;border:none;cursor:pointer;font-family:'Public Sans',sans-serif;
-  font-size:0.92rem;color:var(--ink);padding:0.3rem 0;position:relative;
+  background:none;border:none;font-size:0.9rem;color:var(--ink-light);
+  padding:0.25rem 0;position:relative;letter-spacing:0.01em;
+  transition:color .2s;
 }
+.nav-links button:hover{color:var(--ink);}
 .nav-links button.active{color:var(--forest);font-weight:600;}
 .nav-links button.active::after{
-  content:'';position:absolute;left:0;right:0;bottom:-3px;height:2px;background:var(--clay);
+  content:'';position:absolute;bottom:-4px;left:0;right:0;
+  height:2px;background:var(--clay);border-radius:1px;
 }
 .nav-cta{
-  font-family:'IBM Plex Mono',monospace;font-size:0.78rem;
-  background:var(--forest);color:var(--paper);
-  padding:0.55rem 1.1rem;border-radius:2px;cursor:pointer;border:none;
-  letter-spacing:0.02em;
+  background:var(--forest);color:var(--paper);border:none;
+  padding:0.6rem 1.3rem;border-radius:3px;
+  font-family:'IBM Plex Mono',monospace;font-size:0.76rem;letter-spacing:0.04em;
+  transition:background .2s;
 }
-.menu-toggle{display:none;background:none;border:none;cursor:pointer;}
+.nav-cta:hover{background:var(--forest-mid);}
 
-/* ===== LAYOUT WRAPPER ===== */
+/* ── PAGE TRANSITIONS ── */
 .page{display:none;}
-.page.active{display:block;animation:fade .4s ease;}
-@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
-.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem);}
+.page.active{display:block;animation:fadeUp .35s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(1.5rem,5vw,4rem);}
 
-/* ===== HERO ===== */
+/* ══════════════════════════════
+   HOME PAGE
+══════════════════════════════ */
+
+/* ── HERO ── */
 .hero{
   background:var(--forest);
   color:var(--paper);
-  position:relative;
   overflow:hidden;
-  padding:clamp(3.5rem,8vw,6rem) 0 0 0;
+  position:relative;
 }
-.hero-grid{
-  display:grid;grid-template-columns:1.15fr 0.85fr;gap:3rem;align-items:end;
-  padding-bottom:3rem;
+.hero-inner{
+  display:grid;
+  grid-template-columns:1fr 380px;
+  gap:4rem;
+  align-items:center;
+  padding:clamp(4rem,9vw,7rem) 0 0;
+  position:relative;
+  z-index:2;
 }
-.hero-eyebrow{color:var(--sage);font-family:'IBM Plex Mono',monospace;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:1.1rem;}
-.hero h1{
-  font-size:clamp(2.4rem,5vw,3.9rem);
-  line-height:1.04;
-  font-weight:500;
+.hero-left .tag{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  font-family:'IBM Plex Mono',monospace;font-size:0.7rem;
+  letter-spacing:0.14em;text-transform:uppercase;color:var(--sage);
+  border:1px solid rgba(255,255,255,0.15);padding:0.35rem 0.8rem;
+  border-radius:20px;margin-bottom:2rem;
 }
-.hero h1 em{font-style:italic;color:var(--gold);font-weight:400;}
-.hero-sub{
-  font-size:1.05rem;color:var(--sage);max-width:30ch;align-self:start;
-  padding-top:0.6rem;
-  border-top:1px solid rgba(255,255,255,0.18);
+.hero-left .tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+.hero-h1{font-size:clamp(2.6rem,5.5vw,4.2rem);font-weight:500;color:var(--paper);line-height:1.06;max-width:14ch;}
+.hero-h1 em{font-style:italic;color:var(--gold);}
+.hero-right{
+  align-self:stretch;
+  display:flex;flex-direction:column;justify-content:center;
+  border-left:1px solid rgba(255,255,255,0.1);
+  padding-left:3rem;
+  gap:2rem;
 }
-.hero-actions{display:flex;gap:0.9rem;margin-top:2rem;flex-wrap:wrap;}
-.btn-primary{
-  background:var(--clay);color:var(--paper);border:none;padding:0.85rem 1.5rem;
-  font-family:'IBM Plex Mono',monospace;font-size:0.82rem;letter-spacing:0.03em;
-  cursor:pointer;border-radius:2px;
+.hero-desc{font-size:1.05rem;color:var(--sage);line-height:1.7;max-width:30ch;}
+.hero-btns{display:flex;flex-direction:column;gap:0.75rem;}
+.btn-solid{
+  background:var(--clay);color:var(--paper);border:none;
+  padding:0.9rem 1.6rem;border-radius:3px;text-align:center;
+  font-family:'IBM Plex Mono',monospace;font-size:0.8rem;letter-spacing:0.04em;
+  transition:opacity .2s;
 }
-.btn-ghost{
-  background:transparent;color:var(--paper);border:1px solid rgba(255,255,255,0.35);
-  padding:0.85rem 1.5rem;font-family:'IBM Plex Mono',monospace;font-size:0.82rem;
-  cursor:pointer;border-radius:2px;
+.btn-solid:hover{opacity:0.88;}
+.btn-outline{
+  background:transparent;color:var(--paper);
+  border:1px solid rgba(255,255,255,0.3);
+  padding:0.9rem 1.6rem;border-radius:3px;text-align:center;
+  font-family:'IBM Plex Mono',monospace;font-size:0.8rem;letter-spacing:0.04em;
+  transition:border-color .2s;
 }
-.hero-horizon{margin-top:2.5rem;}
+.btn-outline:hover{border-color:rgba(255,255,255,0.6);}
 
-/* ===== STAT STRIP ===== */
-.stat-strip{
-  background:var(--forest-deep);color:var(--paper);
+/* Hero bottom bar */
+.hero-bar{
   display:grid;grid-template-columns:repeat(4,1fr);
+  margin-top:clamp(3rem,6vw,5rem);
   border-top:1px solid rgba(255,255,255,0.1);
+  position:relative;z-index:2;
 }
-.stat{padding:1.6rem 1.4rem;border-right:1px solid rgba(255,255,255,0.1);}
-.stat:last-child{border-right:none;}
-.stat .num{font-family:'Lora', serif;font-size:1.7rem;color:var(--gold);}
-.stat .label{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--sage);margin-top:0.3rem;}
+.hero-bar-item{
+  padding:1.5rem 1.6rem;
+  border-right:1px solid rgba(255,255,255,0.08);
+}
+.hero-bar-item:last-child{border-right:none;}
+.hbi-val{font-family:'Lora',serif;font-size:1.4rem;color:var(--gold);margin-bottom:0.2rem;}
+.hbi-label{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(169,191,164,0.7);}
 
-/* ===== SECTIONS ===== */
-section.block{padding:clamp(3.5rem,7vw,5.5rem) 0;}
-.section-head{display:grid;grid-template-columns:1fr 1.4fr;gap:2.5rem;margin-bottom:2.8rem;align-items:end;border-bottom:1px solid var(--line);padding-bottom:1.6rem;}
-.section-head h2{font-size:clamp(1.7rem,3vw,2.4rem);}
-.section-head p{color:#4a473d;max-width:48ch;}
+/* Hero background glow */
+.hero-glow{
+  position:absolute;top:-20%;right:-10%;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle, rgba(201,154,74,0.08) 0%, transparent 70%);
+  pointer-events:none;
+}
 
-/* services grid */
-.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
-.svc-card{background:var(--paper);padding:2rem;}
-.svc-tag{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--clay);letter-spacing:0.08em;text-transform:uppercase;}
-.svc-card h3{font-size:1.3rem;margin:0.6rem 0 0.7rem;}
-.svc-card p{color:#4a473d;font-size:0.95rem;}
+/* ── SERVICES PREVIEW ── */
+.home-svc{padding:clamp(4rem,8vw,6rem) 0;}
+.home-svc-head{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  padding-bottom:2rem;border-bottom:1px solid var(--line);margin-bottom:0;
+}
+.home-svc-head h2{font-size:clamp(1.6rem,2.8vw,2.2rem);max-width:20ch;}
+.home-svc-head a{
+  font-family:'IBM Plex Mono',monospace;font-size:0.75rem;
+  letter-spacing:0.06em;color:var(--clay);text-transform:uppercase;
+  white-space:nowrap;
+}
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);}
+.svc-card{
+  padding:2.2rem;border-bottom:1px solid var(--line);
+  border-right:1px solid var(--line);
+  transition:background .2s;
+}
+.svc-card:nth-child(even){border-right:none;}
+.svc-card:nth-child(3),.svc-card:nth-child(4){border-bottom:none;}
+.svc-card:hover{background:var(--paper-warm);}
+.svc-tag{
+  font-family:'IBM Plex Mono',monospace;font-size:0.67rem;
+  color:var(--clay);letter-spacing:0.1em;text-transform:uppercase;
+  margin-bottom:0.9rem;
+}
+.svc-card h3{font-size:1.2rem;margin-bottom:0.7rem;color:var(--forest);}
+.svc-card p{font-size:0.92rem;color:var(--ink-light);line-height:1.65;}
 
-/* approach / process */
-.process{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
-.process-item{border-top:2px solid var(--moss);padding-top:1rem;}
-.process-item .pn{font-family:'IBM Plex Mono',monospace;color:var(--clay);font-size:0.78rem;}
-.process-item h4{font-family:'Lora', serif;font-size:1.1rem;margin:0.4rem 0;}
-.process-item p{font-size:0.88rem;color:#4a473d;}
+/* ── PROCESS ── */
+.process-section{background:var(--forest);color:var(--paper);padding:clamp(4rem,8vw,6rem) 0;}
+.process-head{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,0.1);
+  margin-bottom:3rem;
+}
+.process-head h2{font-size:clamp(1.6rem,2.8vw,2.2rem);color:var(--paper);max-width:24ch;}
+.process-label{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--sage);letter-spacing:0.1em;text-transform:uppercase;}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+.process-item{
+  padding:2rem 2rem 2rem 0;
+  border-right:1px solid rgba(255,255,255,0.1);
+  padding-right:2rem;
+  margin-right:0;
+}
+.process-item:last-child{border-right:none;padding-right:0;}
+.process-item:not(:first-child){padding-left:2rem;}
+.p-num{
+  font-family:'IBM Plex Mono',monospace;font-size:0.7rem;
+  color:var(--gold);letter-spacing:0.08em;margin-bottom:1.2rem;
+  display:flex;align-items:center;gap:0.5rem;
+}
+.p-num::after{content:'';flex:1;height:1px;background:rgba(201,154,74,0.3);}
+.process-item h4{font-size:1.05rem;color:var(--paper);margin-bottom:0.6rem;}
+.process-item p{font-size:0.88rem;color:var(--sage);line-height:1.65;}
 
-/* about */
-.about-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:3rem;align-items:start;}
-.about-card{background:var(--forest);color:var(--paper);padding:2.2rem;border-radius:3px;}
-.about-card .role{color:var(--gold);font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:0.3rem;}
-.about-card h3{font-size:1.5rem;margin-bottom:0.9rem;}
-.about-card ul{list-style:none;padding:0;margin:1.2rem 0 0;font-size:0.88rem;color:var(--sage);}
-.about-card li{padding:0.4rem 0;border-top:1px solid rgba(255,255,255,0.12);}
-.about-body p{margin:0 0 1.1rem;color:#36331f;}
-.about-body p:first-child{font-family:'Lora', serif;font-size:1.25rem;font-style:italic;color:var(--forest);line-height:1.4;}
+/* ══════════════════════════════
+   SERVICES PAGE
+══════════════════════════════ */
+.svc-page-hero{
+  background:var(--forest);
+  color:var(--paper);
+  padding:clamp(3.5rem,7vw,5.5rem) 0 clamp(3rem,6vw,4.5rem);
+  position:relative;overflow:hidden;
+}
+.svc-page-hero::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);
+}
+.svc-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;}
+.svc-hero-tag{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage);margin-bottom:1.2rem;}
+.svc-hero-grid h1{font-size:clamp(1.9rem,3.5vw,2.9rem);color:var(--paper);max-width:18ch;}
+.svc-hero-desc{color:var(--sage);font-size:1rem;line-height:1.7;align-self:end;max-width:38ch;border-left:2px solid var(--gold);padding-left:1.2rem;}
 
-/* focus areas */
-.focus-list{display:flex;flex-direction:column;border-top:1px solid var(--line);}
-.focus-row{display:grid;grid-template-columns:120px 1fr 160px;gap:1.5rem;padding:1.3rem 0;border-bottom:1px solid var(--line);align-items:center;}
-.focus-row .fnum{font-family:'IBM Plex Mono',monospace;color:var(--moss);font-size:0.85rem;}
-.focus-row h4{font-family:'Lora', serif;font-size:1.15rem;}
-.focus-row .floc{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--clay);text-align:right;text-transform:uppercase;letter-spacing:0.04em;}
+/* Services list */
+.svc-list-section{padding:clamp(3rem,6vw,5rem) 0;}
+.svc-list-item{
+  display:grid;grid-template-columns:80px 1fr auto;gap:2rem;
+  padding:2.2rem 0;border-bottom:1px solid var(--line);
+  align-items:start;
+  transition:background .15s;
+}
+.svc-list-item:first-child{border-top:1px solid var(--line);}
+.svc-num{font-family:'IBM Plex Mono',monospace;font-size:0.8rem;color:var(--moss);padding-top:0.3rem;}
+.svc-body h3{font-size:1.25rem;color:var(--forest);margin-bottom:0.6rem;}
+.svc-body p{font-size:0.93rem;color:var(--ink-light);line-height:1.65;max-width:54ch;}
+.svc-client{
+  font-family:'IBM Plex Mono',monospace;font-size:0.68rem;
+  color:var(--clay);text-transform:uppercase;letter-spacing:0.06em;
+  white-space:nowrap;padding-top:0.4rem;
+  border:1px solid rgba(185,94,51,0.25);padding:0.35rem 0.7rem;
+  border-radius:2px;align-self:start;
+}
 
-/* contact */
-.contact-wrap{background:var(--paper-warm);border:1px solid var(--line);border-radius:3px;padding:clamp(2rem,4vw,3.2rem);display:grid;grid-template-columns:1fr 1fr;gap:3rem;}
-.contact-info h2{font-size:1.9rem;margin-bottom:1rem;}
-.contact-info p{color:#4a473d;margin-bottom:1.6rem;}
-.contact-detail{display:flex;flex-direction:column;gap:0.9rem;font-size:0.92rem;}
-.contact-detail div{border-top:1px solid var(--line);padding-top:0.8rem;}
-.contact-detail .clabel{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;text-transform:uppercase;color:var(--moss);letter-spacing:0.06em;}
-form{display:flex;flex-direction:column;gap:1rem;}
-.field label{display:block;font-family:'IBM Plex Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--moss);margin-bottom:0.4rem;}
+/* CTA band */
+.cta-band{
+  background:var(--forest-deep);padding:clamp(3rem,6vw,5rem) 0;
+  position:relative;overflow:hidden;
+}
+.cta-band-inner{
+  display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;
+}
+.cta-band h2{font-size:clamp(1.5rem,2.5vw,2rem);color:var(--paper);max-width:28ch;}
+.cta-band p{color:var(--sage);margin-top:0.6rem;font-size:0.95rem;}
+.cta-band .btn-solid{white-space:nowrap;align-self:center;}
+
+/* ── CONTACT PAGE ── */
+.contact-page{padding:clamp(3.5rem,7vw,5.5rem) 0;}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:start;}
+.contact-left .tag{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--moss);margin-bottom:1rem;}
+.contact-left h1{font-size:clamp(1.9rem,3vw,2.6rem);color:var(--forest);margin-bottom:1.2rem;}
+.contact-left p{color:var(--ink-light);font-size:0.97rem;line-height:1.7;margin-bottom:2.5rem;}
+.contact-details{display:flex;flex-direction:column;gap:0;}
+.cd-row{padding:1rem 0;border-top:1px solid var(--line);}
+.cd-row:last-child{border-bottom:1px solid var(--line);}
+.cd-label{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--moss);margin-bottom:0.25rem;}
+.cd-val{font-size:0.95rem;color:var(--ink);}
+.contact-form-wrap{background:var(--paper-warm);border:1px solid var(--line);border-radius:4px;padding:2.5rem;}
+form{display:flex;flex-direction:column;gap:1.2rem;}
+.field label{display:block;font-family:'IBM Plex Mono',monospace;font-size:0.67rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--moss);margin-bottom:0.45rem;}
 .field input,.field select,.field textarea{
-  width:100%;padding:0.75rem 0.8rem;border:1px solid var(--line);background:var(--paper);
-  font-family:'Public Sans',sans-serif;font-size:0.95rem;border-radius:2px;color:var(--ink);
+  width:100%;padding:0.8rem 0.9rem;
+  border:1px solid var(--line);background:var(--paper);
+  font-family:'Public Sans',sans-serif;font-size:0.95rem;
+  color:var(--ink);border-radius:3px;outline:none;
+  transition:border-color .2s;
 }
-.field textarea{resize:vertical;min-height:90px;}
-.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--moss);outline-offset:1px;}
-.submit-btn{
-  background:var(--clay);color:var(--paper);border:none;padding:0.9rem;
-  font-family:'IBM Plex Mono',monospace;font-size:0.82rem;cursor:pointer;border-radius:2px;margin-top:0.3rem;
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--moss);}
+.field textarea{min-height:100px;resize:vertical;}
+.form-submit{
+  background:var(--forest);color:var(--paper);border:none;
+  padding:0.9rem;border-radius:3px;
+  font-family:'IBM Plex Mono',monospace;font-size:0.8rem;letter-spacing:0.04em;
+  transition:background .2s;margin-top:0.3rem;
 }
-.form-note{font-size:0.78rem;color:#6b6852;margin-top:-0.3rem;}
-.success-msg{display:none;background:var(--forest);color:var(--paper);padding:1rem;border-radius:2px;font-size:0.9rem;}
+.form-submit:hover{background:var(--forest-mid);}
+.form-note{font-size:0.76rem;color:#888;margin-top:-0.5rem;}
+.success-msg{display:none;background:var(--forest);color:var(--paper);padding:1rem;border-radius:3px;font-size:0.9rem;}
 
-/* footer */
-footer{background:var(--forest-deep);color:var(--sage);padding:2.5rem 0 1.6rem;margin-top:2rem;}
-.footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:1.8rem;}
-.footer-brand{font-family:'Lora', serif;color:var(--paper);font-size:1.1rem;}
-.footer-cols{display:flex;gap:3rem;}
-.footer-cols div{font-size:0.85rem;}
-.footer-cols .ftitle{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--gold);margin-bottom:0.6rem;}
-.footer-cols a{display:block;padding:0.2rem 0;text-decoration:none;color:var(--sage);}
-.footer-bottom{display:flex;justify-content:space-between;padding-top:1.2rem;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:#6f7d6f;flex-wrap:wrap;gap:0.5rem;}
+/* ── FOOTER ── */
+footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 2rem;}
+.footer-top{display:flex;justify-content:space-between;align-items:start;gap:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.08);flex-wrap:wrap;}
+.footer-brand{font-family:'Lora',serif;font-size:1.1rem;color:var(--paper);margin-bottom:0.4rem;}
+.footer-tagline{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;color:var(--moss);text-transform:uppercase;}
+.footer-nav{display:flex;gap:3rem;}
+.footer-nav-col .ftitle{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;}
+.footer-nav-col a{display:block;font-size:0.88rem;color:var(--sage);padding:0.2rem 0;transition:color .2s;}
+.footer-nav-col a:hover{color:var(--paper);}
+.footer-bottom{display:flex;justify-content:space-between;padding-top:1.5rem;font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:rgba(169,191,164,0.5);flex-wrap:wrap;gap:0.5rem;}
 
-@media (max-width:860px){
-  .nav-links{display:none;}
-  .menu-toggle{display:block;}
-  .hero-grid{grid-template-columns:1fr;}
-  .hero-sub{border-top:none;padding-top:0;}
-  .stat-strip{grid-template-columns:repeat(2,1fr);}
-  .stat:nth-child(2){border-right:none;}
-  .svc-card{padding:1.2rem;}
-  .process{grid-template-columns:repeat(2,1fr);}
-  .section-head{grid-template-columns:1fr;}
-  .about-grid{grid-template-columns:1fr;}
-  .focus-row{grid-template-columns:1fr;gap:0.3rem;}
-  .focus-row .floc{text-align:left;}
-  .contact-wrap{grid-template-columns:1fr;}
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-right{border-left:none;border-top:1px solid rgba(255,255,255,0.1);padding-left:0;padding-top:2rem;}
+  .hero-btns{flex-direction:row;}
+  .hero-bar{grid-template-columns:repeat(2,1fr);}
+  .home-svc-head{flex-direction:column;align-items:flex-start;gap:1rem;}
+  .process-head{flex-direction:column;align-items:flex-start;gap:1rem;}
+  .process-grid{grid-template-columns:repeat(2,1fr);}
+  .process-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.1);padding:1.5rem 0;}
+  .process-item:last-child{border-bottom:none;}
+  .process-item:not(:first-child){padding-left:0;}
+  .svc-hero-grid{grid-template-columns:1fr;}
+  .svc-list-item{grid-template-columns:50px 1fr;gap:1rem;}
+  .svc-client{display:none;}
+  .contact-grid{grid-template-columns:1fr;}
+  .footer-nav{gap:2rem;}
+  .cta-band-inner{flex-direction:column;align-items:flex-start;}
+}
+@media(max-width:540px){
+  .svc-grid{grid-template-columns:1fr;}
+  .svc-card:nth-child(even){border-right:none;}
+  .svc-card:nth-child(3){border-bottom:1px solid var(--line);}
+  .hero-btns{flex-direction:column;}
+  .hero-bar{grid-template-columns:repeat(2,1fr);}
 }
 </style>
 </head>
 <body>
 
+<!-- ═══════ NAV ═══════ -->
 <nav class="nav">
   <div class="brand" onclick="goPage('home')">
-    <svg class="brand-mark" viewBox="8 2 68 88" fill="none" style="width:28px;height:36px;">
-      <!-- Outer flame: forest green -->
+    <svg viewBox="8 2 68 88" fill="none">
       <path d="M42 90 C18 76 8 56 8 40 C8 22 18 10 30 2 C28 14 32 22 38 28 C36 18 40 10 42 2 C44 10 48 18 46 28 C52 22 56 14 54 2 C66 10 76 22 76 40 C76 56 66 76 42 90 Z" fill="#1C3327"/>
-      <!-- Inner flame: gold -->
       <path d="M42 78 C28 66 22 52 22 40 C22 30 28 22 34 16 C33 24 36 30 40 34 C39 26 41 20 42 14 C43 20 45 26 44 34 C48 30 51 24 50 16 C56 22 62 30 62 40 C62 52 56 66 42 78 Z" fill="#C99A4A"/>
-      <!-- Core: clay -->
       <path d="M42 64 C34 56 30 46 30 38 C30 32 34 26 38 22 C37 28 39 33 42 36 C45 33 47 28 46 22 C50 26 54 32 54 38 C54 46 50 56 42 64 Z" fill="#B95E33"/>
     </svg>
     <div class="brand-name"><span>Phoenix</span> CleanTech</div>
   </div>
-  <div class="nav-links" id="navLinks">
+  <div class="nav-links">
     <button onclick="goPage('home')" data-page="home" class="active">Home</button>
     <button onclick="goPage('services')" data-page="services">Services</button>
     <button onclick="goPage('contact')" data-page="contact">Contact</button>
@@ -240,47 +347,39 @@ footer{background:var(--forest-deep);color:var(--sage);padding:2.5rem 0 1.6rem;m
   <button class="nav-cta" onclick="goPage('contact')">Start a conversation</button>
 </nav>
 
-<!-- ================= HOME ================= -->
+<!-- ═══════ HOME ═══════ -->
 <div class="page active" id="page-home">
+
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <div class="hero-eyebrow">Green finance &amp; AI advisory</div>
-        <h1>Helping public bodies turn<br><em>net zero ambition</em><br>into delivered projects.</h1>
-      </div>
-      <div class="hero-sub">
-        Independent advisory for local authorities, housing associations and community energy organisations — from business case to commissioning.
-      </div>
-    </div>
+    <div class="hero-glow"></div>
     <div class="wrap">
-      <div class="hero-actions">
-        <button class="btn-primary" onclick="goPage('contact')">Book an introductory call</button>
-        <button class="btn-ghost" onclick="goPage('services')">See how we help</button>
+      <div class="hero-inner">
+        <div class="hero-left">
+          <div class="tag">Green Finance &amp; Energy Transition</div>
+          <h1 class="hero-h1">Turning <em>net zero ambition</em> into delivered projects.</h1>
+        </div>
+        <div class="hero-right">
+          <p class="hero-desc">Independent advisory for local authorities, housing associations and community energy organisations — from business case to commissioning.</p>
+          <div class="hero-btns">
+            <button class="btn-solid" onclick="goPage('contact')">Book an introductory call</button>
+            <button class="btn-outline" onclick="goPage('services')">See how we help</button>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="wrap hero-horizon">
-      <svg class="horizon" viewBox="0 0 1160 90" preserveAspectRatio="none">
-        <polyline points="0,70 120,70 160,30 200,70 340,70 400,15 460,70 600,70 650,45 700,70 880,70 930,20 980,70 1160,70" fill="none" stroke="#5C7A5C" stroke-width="1.4"/>
-        <circle cx="160" cy="30" r="3" fill="#C99A4A"/>
-        <circle cx="400" cy="15" r="3" fill="#C99A4A"/>
-        <circle cx="650" cy="45" r="3" fill="#C99A4A"/>
-        <circle cx="930" cy="20" r="3" fill="#C99A4A"/>
-      </svg>
+      <div class="hero-bar">
+        <div class="hero-bar-item"><div class="hbi-val">End-to-End</div><div class="hbi-label">Origination to delivery</div></div>
+        <div class="hero-bar-item"><div class="hbi-val">Solar · Wind · BESS</div><div class="hbi-label">Technology coverage</div></div>
+        <div class="hero-bar-item"><div class="hbi-val">Independent</div><div class="hbi-label">No vendor ties</div></div>
+        <div class="hero-bar-item"><div class="hbi-val">Public Sector</div><div class="hbi-label">Delivery focus</div></div>
+      </div>
     </div>
   </section>
 
-  <div class="stat-strip">
-    <div class="stat"><div class="num">End-to-End</div><div class="label">Origination to delivery</div></div>
-    <div class="stat"><div class="num">Solar / Wind / BESS</div><div class="label">Technology coverage</div></div>
-    <div class="stat"><div class="num">Independent</div><div class="label">Advisory, no vendor ties</div></div>
-    <div class="stat"><div class="num">Public Sector</div><div class="label">Local delivery focus</div></div>
-  </div>
-
-  <section class="block">
+  <section class="home-svc">
     <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">What we do</div>
+      <div class="home-svc-head">
         <h2>Four ways we work with public and community bodies</h2>
+        <a onclick="goPage('services')" href="javascript:void(0)" style="cursor:pointer;">View all services →</a>
       </div>
       <div class="svc-grid">
         <div class="svc-card">
@@ -299,133 +398,154 @@ footer{background:var(--forest-deep);color:var(--sage);padding:2.5rem 0 1.6rem;m
           <p>Practical support to launch and run community energy structures, including Energy Local-style clubs that share the benefit of local generation directly with residents.</p>
         </div>
         <div class="svc-card">
-          <div class="svc-tag">AI &amp; data</div>
+          <div class="svc-tag">AI &amp; Data</div>
           <h3>AI &amp; digital solutions</h3>
-          <p>Practical AI and digital tools built around real energy operations:</p>
-          <ul style="margin:0.6rem 0 0;padding-left:1.2rem;color:#4a473d;font-size:0.92rem;line-height:1.7;">
-            <li>AI for forecasting &amp; asset optimisation</li>
-            <li>Energy management platforms</li>
-            <li>Decision support &amp; automation</li>
-            <li>Data, IoT &amp; edge computing</li>
-          </ul>
+          <p>Practical AI and digital tools built around real energy operations — forecasting, asset optimisation, energy management platforms and decision support.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="block" style="padding-top:0;">
+  <section class="process-section">
     <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">How we work</div>
+      <div class="process-head">
         <h2>A clear path from idea to commissioned asset</h2>
+        <div class="process-label">How we work</div>
       </div>
-      <div class="process">
-        <div class="process-item"><div class="pn">Stage 1</div><h4>Scope &amp; appraise</h4><p>Understand the asset, site or programme and test it against funding and policy realities.</p></div>
-        <div class="process-item"><div class="pn">Stage 2</div><h4>Structure the case</h4><p>Build the financial and governance case your committee or board needs to say yes.</p></div>
-        <div class="process-item"><div class="pn">Stage 3</div><h4>Support procurement</h4><p>Help select and manage delivery partners, from EPC contractors to technology suppliers.</p></div>
-        <div class="process-item"><div class="pn">Stage 4</div><h4>Hand over &amp; monitor</h4><p>Set up the reporting and AI-assisted monitoring needed to keep the asset accountable long after switch-on.</p></div>
+      <div class="process-grid">
+        <div class="process-item">
+          <div class="p-num">Stage 01</div>
+          <h4>Scope &amp; appraise</h4>
+          <p>Understand the asset, site or programme and test it against funding and policy realities.</p>
+        </div>
+        <div class="process-item">
+          <div class="p-num">Stage 02</div>
+          <h4>Structure the case</h4>
+          <p>Build the financial and governance case your committee or board needs to say yes.</p>
+        </div>
+        <div class="process-item">
+          <div class="p-num">Stage 03</div>
+          <h4>Support procurement</h4>
+          <p>Help select and manage delivery partners, from EPC contractors to technology suppliers.</p>
+        </div>
+        <div class="process-item">
+          <div class="p-num">Stage 04</div>
+          <h4>Hand over &amp; monitor</h4>
+          <p>Set up the reporting and AI-assisted monitoring needed to keep the asset accountable long after switch-on.</p>
+        </div>
       </div>
     </div>
   </section>
+
 </div>
 
-<!-- ================= SERVICES ================= -->
+<!-- ═══════ SERVICES ═══════ -->
 <div class="page" id="page-services">
-  <section class="block" style="padding-top:3rem;">
-    <div class="wrap">
-      <div class="hero-eyebrow" style="color:var(--moss);">Services</div>
-      <h1 style="font-size:clamp(2rem,4vw,2.8rem);max-width:18ch;">Advisory built around how the public sector actually procures and decides.</h1>
-    </div>
-  </section>
 
-  <section class="block" style="padding-top:0;">
+  <section class="svc-page-hero">
     <div class="wrap">
-      <div class="focus-list">
-        <div class="focus-row">
-          <div class="fnum">01</div>
-          <div><h4>Green finance &amp; investment advisory</h4><p style="margin:0.3rem 0 0;color:#4a473d;font-size:0.92rem;">Funding strategy, grant and blended-finance structuring, and investment-grade business cases for renewables, retrofit and storage projects.</p></div>
-          <div class="floc">Councils · RSLs</div>
+      <div class="svc-hero-grid">
+        <div>
+          <div class="svc-hero-tag">Services</div>
+          <h1>Advisory built around how the public sector actually procures and decides.</h1>
         </div>
-        <div class="focus-row">
-          <div class="fnum">02</div>
-          <div><h4>Renewables project development</h4><p style="margin:0.3rem 0 0;color:#4a473d;font-size:0.92rem;">Site origination, technical and commercial due diligence, EPC procurement support and asset management for solar, onshore wind and battery storage.</p></div>
-          <div class="floc">IPPs · Landowners</div>
-        </div>
-        <div class="focus-row">
-          <div class="fnum">03</div>
-          <div><h4>Community energy programmes</h4><p style="margin:0.3rem 0 0;color:#4a473d;font-size:0.92rem;">Designing and launching local energy-sharing models, including Energy Local Club structures, so communities benefit directly from nearby generation.</p></div>
-          <div class="floc">Community Orgs</div>
-        </div>
-        <div class="focus-row">
-          <div class="fnum">04</div>
-          <div><h4>AI &amp; digital solutions</h4><p style="margin:0.3rem 0 0;color:#4a473d;font-size:0.92rem;">AI for forecasting &amp; asset optimisation, energy management platforms, decision support &amp; automation, and Data, IoT &amp; edge computing.</p></div>
-          <div class="floc">All Clients</div>
-        </div>
-        <div class="focus-row">
-          <div class="fnum">05</div>
-          <div><h4>Due diligence &amp; transaction support</h4><p style="margin:0.3rem 0 0;color:#4a473d;font-size:0.92rem;">Independent technical and financial review for organisations assessing renewables transactions, partnerships or acquisitions.</p></div>
-          <div class="floc">Investors · Boards</div>
-        </div>
+        <p class="svc-hero-desc">We combine capital markets fluency with on-the-ground project delivery — so every engagement is grounded in how projects actually get funded and built.</p>
       </div>
     </div>
   </section>
 
-  <section class="block" style="padding-top:0;">
-    <div class="wrap" style="background:var(--forest);color:var(--paper);padding:2.5rem clamp(1.5rem,4vw,3rem);border-radius:3px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;">
-      <div>
-        <h3 style="font-size:1.5rem;margin-bottom:0.4rem;">Not sure which of these fits your situation?</h3>
-        <p style="color:var(--sage);margin:0;max-width:50ch;">A short introductory call is usually enough to work out where to start.</p>
+  <section class="svc-list-section">
+    <div class="wrap">
+      <div class="svc-list-item">
+        <div class="svc-num">01</div>
+        <div class="svc-body">
+          <h3>Green finance &amp; investment advisory</h3>
+          <p>Funding strategy, grant and blended-finance structuring, and investment-grade business cases for renewables, retrofit and storage projects.</p>
+        </div>
+        <div class="svc-client">Councils · RSLs</div>
       </div>
-      <button class="btn-primary" onclick="goPage('contact')">Book a call</button>
+      <div class="svc-list-item">
+        <div class="svc-num">02</div>
+        <div class="svc-body">
+          <h3>Renewables project development</h3>
+          <p>Site origination, technical and commercial due diligence, EPC procurement support and asset management for solar, onshore wind and battery storage.</p>
+        </div>
+        <div class="svc-client">IPPs · Landowners</div>
+      </div>
+      <div class="svc-list-item">
+        <div class="svc-num">03</div>
+        <div class="svc-body">
+          <h3>Community energy programmes</h3>
+          <p>Designing and launching local energy-sharing models, including Energy Local Club structures, so communities benefit directly from nearby generation.</p>
+        </div>
+        <div class="svc-client">Community Orgs</div>
+      </div>
+      <div class="svc-list-item">
+        <div class="svc-num">04</div>
+        <div class="svc-body">
+          <h3>AI &amp; digital solutions</h3>
+          <p>AI for forecasting and asset optimisation, energy management platforms, decision support and automation, and data, IoT and edge computing — sized for organisations without a dedicated data team.</p>
+        </div>
+        <div class="svc-client">All clients</div>
+      </div>
+      <div class="svc-list-item">
+        <div class="svc-num">05</div>
+        <div class="svc-body">
+          <h3>Due diligence &amp; transaction support</h3>
+          <p>Independent technical and financial review for organisations assessing renewables transactions, partnerships or acquisitions.</p>
+        </div>
+        <div class="svc-client">Investors · Boards</div>
+      </div>
     </div>
   </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <div class="cta-band-inner">
+        <div>
+          <h2>Not sure which of these fits your situation?</h2>
+          <p>A short introductory call is usually enough to work out where to start.</p>
+        </div>
+        <button class="btn-solid" onclick="goPage('contact')">Book a call</button>
+      </div>
+    </div>
+  </section>
+
 </div>
 
-<!-- ================= CONTACT ================= -->
+<!-- ═══════ CONTACT ═══════ -->
 <div class="page" id="page-contact">
-  <section class="block" style="padding-top:3rem;">
+  <section class="contact-page">
     <div class="wrap">
-      <div class="contact-wrap">
-        <div class="contact-info">
-          <div class="eyebrow">Get in touch</div>
-          <h2>Let's talk about your project</h2>
+      <div class="contact-grid">
+        <div class="contact-left">
+          <div class="tag">Get in touch</div>
+          <h1>Let's talk about your project</h1>
           <p>Whether it's an early-stage idea or a programme already in motion, an introductory conversation costs nothing and usually clarifies the next step quickly.</p>
-          <div class="contact-detail">
-            <div><div class="clabel">Email</div>hello@phoenixcleantech.com</div>
-            <div><div class="clabel">Based in</div>United Kingdom</div>
-            <div><div class="clabel">Coverage</div>UK-wide, with projects considered further afield</div>
+          <div class="contact-details">
+            <div class="cd-row"><div class="cd-label">Email</div><div class="cd-val">hello@phoenixcleantech.com</div></div>
+            <div class="cd-row"><div class="cd-label">Based in</div><div class="cd-val">United Kingdom</div></div>
+            <div class="cd-row"><div class="cd-label">Coverage</div><div class="cd-val">UK-wide, with projects considered further afield</div></div>
           </div>
         </div>
-        <div>
+        <div class="contact-form-wrap">
           <form id="contactForm" onsubmit="handleSubmit(event)">
-            <div class="field">
-              <label for="name">Name</label>
-              <input type="text" id="name" required>
-            </div>
-            <div class="field">
-              <label for="org">Organisation</label>
-              <input type="text" id="org">
-            </div>
-            <div class="field">
-              <label for="email">Email</label>
-              <input type="email" id="email" required>
-            </div>
+            <div class="field"><label for="name">Name</label><input type="text" id="name" required></div>
+            <div class="field"><label for="org">Organisation</label><input type="text" id="org"></div>
+            <div class="field"><label for="email">Email</label><input type="email" id="email" required></div>
             <div class="field">
               <label for="topic">What's this about</label>
               <select id="topic">
                 <option>Green finance / business case support</option>
                 <option>Renewables project development</option>
                 <option>Community energy programme</option>
-                <option>AI &amp; data tooling</option>
+                <option>AI &amp; digital solutions</option>
                 <option>Something else</option>
               </select>
             </div>
-            <div class="field">
-              <label for="message">Message</label>
-              <textarea id="message" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send message</button>
-            <p class="form-note">This form is a placeholder — connect it to your inbox or a service like Formspree before going live.</p>
+            <div class="field"><label for="message">Message</label><textarea id="message" required></textarea></div>
+            <button type="submit" class="form-submit">Send message</button>
+            <p class="form-note">This form is a placeholder — connect it to Formspree or your inbox before going live.</p>
             <div class="success-msg" id="successMsg">Thanks — this is a demo form, so nothing was actually sent yet.</div>
           </form>
         </div>
@@ -434,20 +554,24 @@ footer{background:var(--forest-deep);color:var(--sage);padding:2.5rem 0 1.6rem;m
   </section>
 </div>
 
+<!-- ═══════ FOOTER ═══════ -->
 <footer>
   <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">Phoenix CleanTech Ltd</div>
-      <div class="footer-cols">
-        <div>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Phoenix CleanTech Ltd</div>
+        <div class="footer-tagline">Green Finance · Energy Transition</div>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-nav-col">
           <div class="ftitle">Site</div>
           <a onclick="goPage('home')" href="javascript:void(0)">Home</a>
           <a onclick="goPage('services')" href="javascript:void(0)">Services</a>
           <a onclick="goPage('contact')" href="javascript:void(0)">Contact</a>
         </div>
-        <div>
+        <div class="footer-nav-col">
           <div class="ftitle">Contact</div>
-          <a href="javascript:void(0)">hello@phoenixcleantech.com</a>
+          <a href="mailto:hello@phoenixcleantech.com">hello@phoenixcleantech.com</a>
           <a href="javascript:void(0)">United Kingdom</a>
         </div>
       </div>
@@ -461,17 +585,16 @@ footer{background:var(--forest-deep);color:var(--sage);padding:2.5rem 0 1.6rem;m
 
 <script>
 function goPage(name){
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('page-' + name).classList.add('active');
-  document.querySelectorAll('.nav-links button').forEach(b => b.classList.toggle('active', b.dataset.page === name));
-  window.scrollTo({top:0, behavior:'smooth'});
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+name).classList.add('active');
+  document.querySelectorAll('.nav-links button').forEach(b=>b.classList.toggle('active',b.dataset.page===name));
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 function handleSubmit(e){
   e.preventDefault();
-  document.getElementById('successMsg').style.display = 'block';
+  document.getElementById('successMsg').style.display='block';
   document.getElementById('contactForm').reset();
 }
 </script>
-
 </body>
 </html>
