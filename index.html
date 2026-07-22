@@ -400,6 +400,7 @@ footer{
   .footer-cols{gap:2.5rem;}
   .section-header{flex-wrap:wrap;gap:0.5rem;}
   .section-header h2{white-space:normal;}
+  .pillar-grid{grid-template-columns:repeat(2,1fr) !important;}
 }
 @media(max-width:600px){
   .sp-hero-quote br{display:none;}
@@ -411,6 +412,7 @@ footer{
   .nav-links{display:none;}
   .h-hero-btns{flex-direction:column;}
   .h-stats{grid-template-columns:repeat(2,1fr);}
+  .pillar-grid{grid-template-columns:1fr !important;}
 }
 </style>
 </head>
@@ -444,17 +446,21 @@ footer{
       <div class="h-hero-body">
         <div class="h-hero-left">
           <div class="h-hero-kicker">Green Finance &amp; Energy Transition</div>
-          <h1 class="h-hero-h1">Turning <em>net zero ambition</em> into delivered projects.</h1>
+          <h1 class="h-hero-h1">AI-native platforms &amp; data architecture.</h1>
         </div>
         <div class="h-hero-right">
-          <p class="h-hero-desc" style="color:var(--clay);">Independent advisory for local authorities, housing associations and community energy organisations — from business case to commissioning.</p>
+          <p class="h-hero-desc" style="color:var(--clay);">For local authorities, housing associations and community energy organisations — from business case to commissioning.</p>
+          <div style="display:flex;gap:0.9rem;flex-wrap:wrap;margin-top:0.4rem;">
+            <button class="btn-primary" onclick="goPage('services')">Explore Our Platform</button>
+            <button class="btn-secondary" onclick="goPage('contact')">Book a Technical Briefing</button>
+          </div>
         </div>
       </div>
     </div>
     <div class="h-stats">
       <div class="h-stat"><div class="h-stat-val">End-to-End</div><div class="h-stat-lab">Origination to delivery</div></div>
       <div class="h-stat"><div class="h-stat-val">Solar · Wind · BESS</div><div class="h-stat-lab">Technology coverage</div></div>
-      <div class="h-stat"><div class="h-stat-val">Independent</div><div class="h-stat-lab">No vendor ties</div></div>
+      <div class="h-stat"><div class="h-stat-val">Technology Engine</div><div class="h-stat-lab">Scalable platform layer</div></div>
       <div class="h-stat"><div class="h-stat-val">Public Sector</div><div class="h-stat-lab">Primary client focus</div></div>
     </div>
   </section>
@@ -468,21 +474,21 @@ footer{
       <div class="svc-cards">
         <div class="svc-card">
           <div class="svc-icon">◈</div>
-          <div class="svc-tag">Advisory</div>
-          <h3>Green finance &amp; business case support</h3>
-          <p>Funding strategy, due diligence and investment cases for renewables and retrofit programmes — built to withstand committee and funder scrutiny.</p>
+          <div class="svc-tag">Data Architecture</div>
+          <h3>Green finance &amp; business case platform</h3>
+          <p>Automated funding strategies, data due diligence and investment engines for renewables and retrofit programmes — built to withstand committee and funder scrutiny.</p>
         </div>
         <div class="svc-card">
           <div class="svc-icon">◉</div>
-          <div class="svc-tag">Delivery</div>
-          <h3>Renewables project development</h3>
-          <p>Origination through to asset management for solar, onshore wind and battery storage — drawing on EPC and transaction experience across multiple markets.</p>
+          <div class="svc-tag">Delivery Systems</div>
+          <h3>Renewables project development technology</h3>
+          <p>Automated origination through to asset management platforms for solar, onshore wind and battery storage — drawing on EPC and transaction data across multiple markets.</p>
         </div>
         <div class="svc-card">
           <div class="svc-icon">◎</div>
           <div class="svc-tag">Community</div>
-          <h3>Local energy programme set-up</h3>
-          <p>Practical support to launch and run community energy structures, including Energy Local-style clubs that share the benefit of local generation directly with residents.</p>
+          <h3>Local energy software platforms</h3>
+          <p>Digital infrastructure to launch and run community energy structures, including Energy Local-style software that shares the benefit of local generation directly with residents.</p>
         </div>
         <div class="svc-card">
           <div class="svc-icon">◇</div>
@@ -497,29 +503,29 @@ footer{
   <section class="h-process">
     <div class="wrap">
       <div class="section-header">
-        <h2>A clear path from idea to commissioned asset</h2>
+        <h2>A clear path from scope to deployed platform</h2>
         <div class="section-header-rule"></div>
       </div>
       <div class="process-steps">
         <div class="p-step">
           <span class="p-num">01</span>
-          <h4>Scope &amp; appraise</h4>
-          <p>Understand the asset, site or programme and test it against funding and policy realities.</p>
+          <h4>Scope &amp; map</h4>
+          <p>Map the asset, portfolio or programme data against funding and policy requirements.</p>
         </div>
         <div class="p-step">
           <span class="p-num">02</span>
-          <h4>Structure the case</h4>
-          <p>Build the financial and governance case your committee or board needs to say yes.</p>
+          <h4>Build the module</h4>
+          <p>Configure the platform module your case, portfolio or programme needs — modular, not off-the-shelf.</p>
         </div>
         <div class="p-step">
           <span class="p-num">03</span>
-          <h4>Support procurement</h4>
-          <p>Help select and manage delivery partners, from EPC contractors to technology suppliers.</p>
+          <h4>Integrate &amp; deploy</h4>
+          <p>Connect data sources and deploy within your own environment, working alongside your delivery partners.</p>
         </div>
         <div class="p-step">
           <span class="p-num">04</span>
-          <h4>Hand over &amp; monitor</h4>
-          <p>Set up reporting and AI-assisted monitoring to keep the asset accountable long after switch-on.</p>
+          <h4>Monitor &amp; iterate</h4>
+          <p>Live reporting and AI-assisted monitoring keep the asset accountable long after switch-on.</p>
         </div>
       </div>
     </div>
@@ -534,9 +540,9 @@ footer{
 
   <section class="sp-hero">
     <div class="wrap">
-      <div class="sp-kicker">Services</div>
-      <h1>Advisory built around how the public sector actually procures and decides.</h1>
-      <p class="sp-hero-quote">We combine capital markets fluency with on-the-ground project delivery experience<br>— so every engagement is grounded in how projects actually get funded and built.</p>
+      <div class="sp-kicker">Platform Services</div>
+      <h1>Platform Services</h1>
+      <p class="sp-hero-quote">Data-driven tooling for green finance, project development, community energy, and portfolio diligence<br>— built for organisations that need automation, not just advice.</p>
     </div>
   </section>
 
@@ -545,24 +551,24 @@ footer{
       <div class="sp-row">
         <div class="sp-n">01</div>
         <div class="sp-content">
-          <h3>Green finance &amp; investment advisory</h3>
-          <p>Funding strategy, grant and blended-finance structuring, and investment-grade business cases for renewables, retrofit and storage projects.</p>
+          <h3>Green finance &amp; investment platforms</h3>
+          <p>Data-driven funding strategies, grant and blended-finance structuring, and automated investment-grade business cases for renewables, retrofit and storage projects.</p>
         </div>
         <div><span class="sp-pill">Councils · RSLs</span></div>
       </div>
       <div class="sp-row">
         <div class="sp-n">02</div>
         <div class="sp-content">
-          <h3>Renewables project development</h3>
-          <p>Site origination, technical and commercial due diligence, EPC procurement support and asset management for solar, onshore wind and battery storage.</p>
+          <h3>Renewables project software</h3>
+          <p>Automated site origination, technical and commercial data review, EPC procurement tools and asset management software for solar, onshore wind and battery storage.</p>
         </div>
         <div><span class="sp-pill">IPPs · Landowners</span></div>
       </div>
       <div class="sp-row">
         <div class="sp-n">03</div>
         <div class="sp-content">
-          <h3>Community energy programmes</h3>
-          <p>Designing and launching local energy-sharing models, including Energy Local Club structures, so communities benefit directly from nearby generation.</p>
+          <h3>Community energy platforms</h3>
+          <p>Designing and launching digital energy-sharing models, including Energy Local Club software structures, so communities benefit directly from nearby generation.</p>
         </div>
         <div><span class="sp-pill">Community Orgs</span></div>
       </div>
@@ -577,8 +583,8 @@ footer{
       <div class="sp-row">
         <div class="sp-n">05</div>
         <div class="sp-content">
-          <h3>Due diligence &amp; transaction support</h3>
-          <p>Independent technical and financial review for organisations assessing renewables transactions, partnerships or acquisitions.</p>
+          <h3>Data verification &amp; transaction software</h3>
+          <p>Automated technical and financial review systems for organisations assessing renewables transactions, partnerships or acquisitions.</p>
         </div>
         <div><span class="sp-pill">Investors · Boards</span></div>
       </div>
@@ -626,10 +632,11 @@ footer{
             <div class="field">
               <label>What's this about</label>
               <select>
-                <option>Green finance / business case support</option>
-                <option>Renewables project development</option>
-                <option>Community energy programme</option>
+                <option>Green finance &amp; investment platforms</option>
+                <option>Renewables project software</option>
+                <option>Community energy platforms</option>
                 <option>AI &amp; digital solutions</option>
+                <option>Data verification &amp; transaction software</option>
                 <option>Something else</option>
               </select>
             </div>
@@ -742,7 +749,7 @@ footer{
     <div class="footer-top">
       <div>
         <div class="footer-brand-name">Phoenix CleanTech Ltd</div>
-        <div class="footer-tagline">Green Finance · Energy Transition</div>
+        <div class="footer-tagline">Data &amp; AI for Clean Energy Infrastructure</div>
       </div>
       <div class="footer-cols">
         <div class="fc">
@@ -761,7 +768,7 @@ footer{
     </div>
     <div class="footer-bottom">
       <span>© 2026 Phoenix CleanTech Ltd. Registered in Scotland.</span>
-      <span>Green finance &amp; energy transition advisory</span>
+      <span>Data &amp; AI for Clean Energy Infrastructure</span>
     </div>
   </div>
 </footer>
