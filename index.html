@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Phoenix CleanTech Ltd — Green Finance & Energy Transition</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Public+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Public+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ─── TOKENS ─── */
 :root{
@@ -123,6 +123,7 @@ img,svg{display:block;}
   letter-spacing:0.04em;transition:opacity .18s;
 }
 .btn-primary:hover{opacity:.88;}
+.principle-chip:hover{opacity:.88;}
 .btn-secondary{
   background:transparent;color:var(--cream);
   border:1px solid rgba(255,255,255,0.25);
@@ -218,8 +219,7 @@ img,svg{display:block;}
    SERVICES PAGE
 ════════════════════════════════════════ */
 .sp-hero{
-  padding:clamp(4rem,8vw,6.5rem) 0 clamp(3rem,6vw,5rem);
-  border-bottom:1px solid var(--rule);
+  padding:clamp(4rem,8vw,6.5rem) 0 1.2rem;
 }
 .sp-kicker{
   font-family:'IBM Plex Mono',monospace;font-size:0.68rem;
@@ -238,7 +238,7 @@ img,svg{display:block;}
 .sp-list{padding:clamp(3rem,6vw,5rem) 0;}
 .sp-row{
   display:grid;grid-template-columns:2.5rem 1fr 14rem;
-  gap:2.5rem;padding:2.5rem 0;
+  gap:1.2rem;padding:2.5rem 0;
   border-bottom:1px solid var(--rule);
   align-items:start;
 }
@@ -448,7 +448,7 @@ footer{
       <div class="h-hero-body">
         <div class="h-hero-left">
           <div class="h-hero-kicker">Green Finance &amp; Energy Transition</div>
-          <h1 class="h-hero-h1">AI-powered platforms for clean energy delivery.</h1>
+          <h1 class="h-hero-h1">AI-powered platforms for Net Zero.</h1>
         </div>
         <div class="h-hero-right">
           <p class="h-hero-desc" style="color:var(--clay);">For local authorities, housing associations and community energy organisations — reducing energy costs and the wider cost of living, from business case to commissioning.</p>
@@ -495,10 +495,8 @@ footer{
           <div class="svc-tag">Community</div>
           <h3>VPP platform</h3>
         </div>
-        <div class="svc-card">
-          <div class="svc-icon" aria-hidden="true">◇</div>
-          <div class="svc-tag">AI &amp; Data</div>
-          <h3>Customise &amp; extend</h3>
+        <div class="svc-card" style="grid-column:1 / -1;">
+          <h3 style="white-space:nowrap;font-size:1rem;color:var(--clay);">◇ AI &amp; Data — Customise or Extend Any Platform With Your Own Data and Models</h3>
         </div>
       </div>
     </div>
@@ -546,18 +544,28 @@ footer{
     <div class="wrap">
       <div class="sp-kicker">Platform Services</div>
       <h1>Platform Services</h1>
-      <p class="sp-hero-quote">Four core platforms your organisation can subscribe to and configure — plus an AI &amp; Data layer to customise or extend any of them<br>for a purpose standard tooling doesn't cover.</p>
-      <div style="display:flex;gap:2.5rem;flex-wrap:wrap;margin-top:1.8rem;padding-top:1.6rem;border-top:1px solid var(--rule);">
-        <div style="font-size:0.85rem;color:var(--ink-mid);"><strong style="color:var(--forest);">User-friendly</strong> — no specialist training required</div>
-        <div style="font-size:0.85rem;color:var(--ink-mid);"><strong style="color:var(--forest);">Cost-effective</strong> — scoped for public sector budgets</div>
-        <div style="font-size:0.85rem;color:var(--ink-mid);"><strong style="color:var(--forest);">Your data stays yours</strong> — deployed in your own environment</div>
-        <div style="font-size:0.85rem;color:var(--ink-mid);"><strong style="color:var(--forest);">Connected, not siloed</strong> — one shared data layer across all platforms</div>
-        <div style="font-size:0.85rem;color:var(--ink-mid);"><strong style="color:var(--forest);">Complementary by design</strong> — built to work alongside existing public sector platforms</div>
+      <p class="sp-hero-quote">Four core platforms your organisation can subscribe to and configure — plus an AI &amp; Data layer to customise or extend any of them, for a purpose standard tooling doesn't cover.</p>
+      <div style="margin-top:0.9rem;padding-top:0.8rem;">
+        <div style="display:flex;flex-wrap:nowrap;gap:0.5rem;margin-bottom:0.5rem;">
+          <span class="principle-chip" onclick="togglePrinciple('p1')" style="cursor:pointer;flex:1;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:0.85rem;font-weight:600;color:var(--cream);background:var(--clay);border-radius:2px;padding:0.6rem 0.8rem;transition:opacity .18s;">User-friendly</span>
+          <span class="principle-chip" onclick="togglePrinciple('p3')" style="cursor:pointer;flex:1;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:0.85rem;font-weight:600;color:var(--cream);background:var(--clay);border-radius:2px;padding:0.6rem 0.8rem;transition:opacity .18s;">Cost-effective</span>
+          <span class="principle-chip" onclick="togglePrinciple('p5')" style="cursor:pointer;flex:1;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:0.85rem;font-weight:600;color:var(--cream);background:var(--clay);border-radius:2px;padding:0.6rem 0.8rem;transition:opacity .18s;">Connected, not siloed</span>
+        </div>
+        <div style="display:flex;flex-wrap:nowrap;gap:0.5rem;">
+          <span class="principle-chip" onclick="togglePrinciple('p4')" style="cursor:pointer;flex:1;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:0.85rem;font-weight:600;color:var(--cream);background:var(--clay);border-radius:2px;padding:0.6rem 0.8rem;transition:opacity .18s;">Your data stays yours</span>
+          <span class="principle-chip" onclick="togglePrinciple('p2')" style="cursor:pointer;flex:1;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:0.85rem;font-weight:600;color:var(--cream);background:var(--clay);border-radius:2px;padding:0.6rem 0.8rem;transition:opacity .18s;">Complementary by design</span>
+        </div>
+
+        <div id="p1" class="principle-desc" style="display:none;margin-top:0.7rem;font-size:0.88rem;color:var(--ink-mid);"><strong style="color:var(--forest);">User-friendly</strong> — no specialist training required</div>
+        <div id="p2" class="principle-desc" style="display:none;margin-top:0.7rem;font-size:0.88rem;color:var(--ink-mid);"><strong style="color:var(--forest);">Complementary by design</strong> — built to work alongside existing public sector platforms</div>
+        <div id="p3" class="principle-desc" style="display:none;margin-top:0.7rem;font-size:0.88rem;color:var(--ink-mid);"><strong style="color:var(--forest);">Cost-effective</strong> — scoped for public sector budgets</div>
+        <div id="p4" class="principle-desc" style="display:none;margin-top:0.7rem;font-size:0.88rem;color:var(--ink-mid);"><strong style="color:var(--forest);">Your data stays yours</strong> — deployed in your own environment</div>
+        <div id="p5" class="principle-desc" style="display:none;margin-top:0.7rem;font-size:0.88rem;color:var(--ink-mid);"><strong style="color:var(--forest);">Connected, not siloed</strong> — one shared data layer across all platforms</div>
       </div>
     </div>
   </section>
 
-  <section class="sp-list">
+  <section class="sp-list" style="padding-top:0.5rem;">
     <div class="wrap">
       <div class="sp-row">
         <div class="sp-n">01</div>
@@ -839,13 +847,17 @@ footer{
   <div style="max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;">
     <p style="margin:0;font-size:0.85rem;line-height:1.6;color:rgba(245,241,232,0.85);max-width:60ch;">We use essential cookies to run this site, and optional analytics cookies to understand how it's used. Optional cookies are only set if you accept. See our <a href="javascript:void(0)" onclick="goPage('privacy')" style="color:#C99A4A;text-decoration:underline;">Privacy Policy</a> for details.</p>
     <div style="display:flex;gap:0.7rem;flex-shrink:0;">
-      <button onclick="setCookieConsent(false)" style="background:transparent;border:1px solid rgba(245,241,232,0.4);color:#F5F1E8;padding:0.6rem 1.1rem;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;cursor:pointer;">Reject optional</button>
+      <button onclick="setCookieConsent(false)" style="background:transparent;border:1px solid rgba(245,241,232,0.4);color:#F5F1E8;padding:0.6rem 1.1rem;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;cursor:pointer;">Accept essential only</button>
       <button onclick="setCookieConsent(true)" style="background:#B95E33;border:none;color:#F5F1E8;padding:0.6rem 1.1rem;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;cursor:pointer;">Accept all</button>
     </div>
   </div>
 </div>
 
 <script>
+function togglePrinciple(id){
+  const el = document.getElementById(id);
+  if(el) el.style.display = (el.style.display === 'none' || !el.style.display) ? 'block' : 'none';
+}
 function goPage(n){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById('page-'+n).classList.add('active');
