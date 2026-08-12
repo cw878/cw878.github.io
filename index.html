@@ -103,13 +103,19 @@ img,svg{display:block;}
   height: 1px;
   background: var(--gold);
 }
+.h-hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
 
 .h-hero-h1 {
-  font-size: clamp(1.5rem, 3.5vw, 2.8rem);
+  font-size: clamp(1.3rem, 2.2vw, 1.8rem);
   font-weight: 500;
   color: var(--cream);
-  line-height: 1;
-  margin-bottom: 0.75rem; /* Increase or decrease to control space below */
+  line-height: 1.25;
+  margin: 0.5rem 0;
 }
 
 .h-hero-h1 em {
@@ -125,7 +131,7 @@ img,svg{display:block;}
   width: 100%;
   max-width: 900px;
 }
-.h-hero-desc{font-size:1.15rem;color:rgba(247,243,235,0.85);line-height:1.5;}
+.h-hero-desc{font-size:1.15rem;color:var(--clay);line-height:1.5;}
 .h-hero-btns{display:flex;gap:0.75rem;flex-wrap:wrap;}
 .btn-primary{
   background:var(--clay);color:var(--cream);
