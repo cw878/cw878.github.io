@@ -80,24 +80,20 @@ img,svg{display:block;}
 ════════════════════════════════════════ */
 
 /* Hero */
-.h-hero{
-background:var(--forest);
-color:var(--cream);
-padding:clamp(5rem, 8vw, 8rem) 0 0 0;
-overflow:hidden;position:relative;
-width:100vw;
-margin-left:calc(-50vw + 50%);
-margin-right:calc(-50vw + 50%);
+.h-hero {
+  background: var(--forest);
+  color: var(--cream);
+  padding: clamp(5rem, 8vw, 8rem) 0 0 0; /* 0 on left and right */
+  overflow: hidden;
+  position: relative;
 }
-.h-hero-body{
-display:flex;
-flex-direction:column;
-gap:clamp(1.5rem,3vw,2.5rem);
-align-items:flex-start;
-padding:0 clamp(1.5rem, 5vw, 4rem);
-padding-bottom:clamp(3rem,6vw,5rem);
-max-width:1160px;
-margin:0 auto;
+.h-hero-body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: flex-start;
+  padding: 0 clamp(1.5rem, 5vw, 4rem); /* adds side padding to text only */
+  padding-bottom: clamp(3rem, 6vw, 5rem);
 }
 .h-hero-kicker{
   font-family:'IBM Plex Mono',monospace;
@@ -140,12 +136,13 @@ max-width:1050px;
 }
 .btn-secondary:hover{border-color:rgba(255,255,255,0.55);}
 /* Hero stats bar */
-.h-stats{
-display:grid;grid-template-columns:repeat(4,1fr);
-width:100%;
-border-top:1px solid rgba(255,255,255,0.15);
-border-bottom:1px solid rgba(255,255,255,0.15);
-background:var(--forest-deep);
+.h-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  background: var(--forest-deep);
 }
 .h-stat{
   padding:1.5rem 2rem;
