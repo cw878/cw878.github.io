@@ -83,7 +83,7 @@ img,svg{display:block;}
 .h-hero{
   background:var(--forest);
   color:var(--cream);
-  padding:clamp(5rem,10vw,8rem) 0 0;
+  padding: clamp(5rem, 8vw, 8rem) 0 0 0;
   overflow:hidden;position:relative;
 }
 .h-hero-body{
@@ -135,11 +135,22 @@ max-width:1050px;
 .btn-secondary:hover{border-color:rgba(255,255,255,0.55);}
 
 /* Hero stats bar */
-.h-stats{
-display:grid;grid-template-columns:repeat(4,1fr);
-border-top:1px solid rgba(255,255,255,0.12);
-border-bottom:1px solid rgba(255,255,255,0.12);
-background:var(--forest-deep);
+.h-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  background: var(--forest-deep);
+}
+
+.h-stat {
+  padding: 1.75rem 1.5rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.h-stat:last-child {
+  border-right: none;
 }
 .h-stat{
 padding:1.5rem 1rem;
