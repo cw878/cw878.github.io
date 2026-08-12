@@ -664,6 +664,14 @@ footer{
               </select>
             </div>
             <div class="field"><label>Message</label><textarea required></textarea></div>
+
+            <div style="display:flex;align-items:flex-start;gap:0.6rem;margin:0.4rem 0 1rem;">
+              <input type="checkbox" id="marketingConsent" style="margin-top:0.3rem;width:16px;height:16px;accent-color:var(--clay);flex-shrink:0;">
+              <label for="marketingConsent" style="font-size:0.85rem;color:var(--ink-mid);font-weight:400;text-transform:none;letter-spacing:normal;cursor:pointer;">I'd like to receive occasional updates from Phoenix CleanTech about new platforms and services.</label>
+            </div>
+
+            <p style="font-size:0.78rem;color:var(--ink-mid);line-height:1.6;margin-bottom:1rem;">By submitting this form, you consent to Phoenix CleanTech processing the information above to respond to your enquiry. See our <a onclick="goPage('privacy')" href="javascript:void(0)" style="color:var(--clay);text-decoration:underline;cursor:pointer;">Privacy Policy</a>. You can unsubscribe from optional updates at any time.</p>
+
             <button type="submit" class="form-btn">Send message</button>
             <p class="form-note">Connect this form to Formspree or your inbox before going live.</p>
             <div class="success-msg" id="successMsg">Thanks — this is a demo form, nothing was sent yet.</div>
