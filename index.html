@@ -148,8 +148,8 @@ img,svg{display:block;}
 
 .cc-note{font-size:0.82rem;color:var(--ink-light);font-style:italic;margin-top:1.2rem;border-left:2px solid var(--gold);padding-left:1rem;}
 
-/* CONTACT */
-.cp{padding:clamp(3.5rem,7vw,5.5rem) 0;border-top:1px solid var(--rule);}
+/* CONTACT - FIX PADDING TO MATCH SITES BOUNDARIES */
+.cp-wrap{padding:clamp(3.5rem,7vw,5.5rem) 0;border-top:1px solid var(--rule);}
 .cp-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4rem);align-items:start;}
 .cp-left h1{font-size:clamp(1.7rem,2.8vw,2.3rem);color:var(--forest);margin-bottom:1.1rem;}
 .cp-left > p{font-size:0.95rem;color:var(--ink-light);line-height:1.7;margin-bottom:2.5rem;}
@@ -510,56 +510,58 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
 
 <!-- CONTACT SECTION -->
 <div class="page-section" id="contact">
-  <div class="wrap cp">
-    <div class="cp-inner">
-      <div class="cp-left">
-        <h1>Book a Technical Briefing</h1>
-        <p>Engage directly with our technical team to discuss campus decarbonisation, climate tech intake, or AI model gateway integration.</p>
-        <div class="cp-details">
-          <div class="cp-detail">
-            <div class="cp-detail-label">Entity</div>
-            <div class="cp-detail-val">Phoenix Cleantech Ltd</div>
-          </div>
-          <div class="cp-detail">
-            <div class="cp-detail-label">Primary Client Focus</div>
-            <div class="cp-detail-val">Schools, Universities, Local Authorities &amp; Climate Tech Innovators</div>
-          </div>
-          <div class="cp-detail">
-            <div class="cp-detail-label">Infrastructure Partner Tier</div>
-            <div class="cp-detail-val">AWS Infrastructure &amp; Bedrock Gateway</div>
+  <div class="cp-wrap">
+    <div class="wrap">
+      <div class="cp-inner">
+        <div class="cp-left">
+          <h1>Book a Technical Briefing</h1>
+          <p>Engage directly with our technical team to discuss campus decarbonisation, climate tech intake, or AI model gateway integration.</p>
+          <div class="cp-details">
+            <div class="cp-detail">
+              <div class="cp-detail-label">Entity</div>
+              <div class="cp-detail-val">Phoenix Cleantech Ltd</div>
+            </div>
+            <div class="cp-detail">
+              <div class="cp-detail-label">Primary Client Focus</div>
+              <div class="cp-detail-val">Schools, Universities, Local Authorities &amp; Climate Tech Innovators</div>
+            </div>
+            <div class="cp-detail">
+              <div class="cp-detail-label">Infrastructure Partner Tier</div>
+              <div class="cp-detail-val">AWS Infrastructure &amp; Bedrock Gateway</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="cp-form-wrap">
-        <form>
-          <div class="field">
-            <label>Name</label>
-            <input type="text" required placeholder="Your full name">
-          </div>
-          <div class="field">
-            <label>Organisation</label>
-            <input type="text" required placeholder="School Trust, University, Council, or Company">
-          </div>
-          <div class="field">
-            <label>Email</label>
-            <input type="email" required placeholder="name@organisation.gov.uk">
-          </div>
-          <div class="field">
-            <label>Area of Interest</label>
-            <select required>
-              <option value="">Select briefing topic</option>
-              <option>Campus / Estate Decarbonisation</option>
-              <option>Submit a Climate Tech Project</option>
-              <option>Phoenix Capital Assessment Framework</option>
-              <option>CleanCloud AI Gateway API Access</option>
-            </select>
-          </div>
-          <div class="field">
-            <label>Message</label>
-            <textarea placeholder="Briefly describe your site, technology, or briefing objectives..."></textarea>
-          </div>
-          <button type="button" class="form-btn">Request Technical Briefing</button>
-        </form>
+        <div class="cp-form-wrap">
+          <form>
+            <div class="field">
+              <label>Name</label>
+              <input type="text" required placeholder="Your full name">
+            </div>
+            <div class="field">
+              <label>Organisation</label>
+              <input type="text" required placeholder="School Trust, University, Council, or Company">
+            </div>
+            <div class="field">
+              <label>Email</label>
+              <input type="email" required placeholder="name@organisation.gov.uk">
+            </div>
+            <div class="field">
+              <label>Area of Interest</label>
+              <select required>
+                <option value="">Select briefing topic</option>
+                <option>Campus / Estate Decarbonisation</option>
+                <option>Submit a Climate Tech Project</option>
+                <option>Phoenix Capital Assessment Framework</option>
+                <option>CleanCloud AI Gateway API Access</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Message</label>
+              <textarea placeholder="Briefly describe your site, technology, or briefing objectives..."></textarea>
+            </div>
+            <button type="button" class="form-btn">Request Technical Briefing</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
