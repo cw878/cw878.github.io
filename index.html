@@ -19,27 +19,26 @@ html{scroll-behavior:smooth;}
 body{background:var(--cream);color:var(--ink);font-family:'Public Sans',sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;}
 h1,h2,h3,h4{font-family:'Lora',serif;font-weight:500;line-height:1.12;letter-spacing:-0.02em;}
 a{color:inherit;text-decoration:none;}
-button{cursor:pointer;font-family:inherit;border:none;}
+button,.btn{cursor:pointer;font-family:inherit;border:none;display:inline-block;text-align:center;}
 img,svg{display:block;}
 
+/* NAV */
 .nav{position:sticky;top:0;z-index:200;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.25rem,4vw,3.5rem);background:rgba(247,243,235,0.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);gap:1rem;}
-.brand{display:flex;align-items:center;gap:0.6rem;cursor:pointer;flex-shrink:0;}
+.brand{display:flex;align-items:center;gap:0.6rem;flex-shrink:0;}
 .brand svg{width:22px;height:28px;flex-shrink:0;}
 .brand-name{font-family:'Lora',serif;font-size:0.98rem;font-weight:600;letter-spacing:-0.01em;white-space:nowrap;}
 .brand-name .c1{color:var(--clay);}
 .nav-links{display:flex;gap:1.8rem;}
-.nav-links button{background:none;font-size:0.84rem;color:var(--ink-mid);padding:0.2rem 0;position:relative;letter-spacing:0.01em;transition:color .18s;white-space:nowrap;}
-.nav-links button:hover,.nav-links button.active{color:var(--ink);}
-.nav-links button.active::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1.5px;background:var(--clay);}
+.nav-links a{font-size:0.84rem;color:var(--ink-mid);padding:0.2rem 0;position:relative;letter-spacing:0.01em;transition:color .18s;white-space:nowrap;}
+.nav-links a:hover{color:var(--ink);}
 .nav-ctas{display:flex;gap:0.6rem;flex-shrink:0;}
 .nav-cta-primary{background:var(--clay);color:var(--cream);padding:0.5rem 1rem;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.04em;white-space:nowrap;transition:opacity .18s;}
 .nav-cta-primary:hover{opacity:.85;}
 .nav-cta-secondary{background:transparent;color:var(--forest);border:1px solid var(--rule);padding:0.5rem 1rem;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.04em;white-space:nowrap;transition:border-color .18s;}
 .nav-cta-secondary:hover{border-color:var(--clay);}
 
-.page{display:none;}
-.page.active{display:block;animation:appear .3s ease both;}
-@keyframes appear{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+/* LAYOUT STRUCTURE */
+.page-section{display:block;width:100%;}
 .wrap{max-width:1160px;margin:0 auto;padding:0 clamp(1.5rem,5vw,4.5rem);}
 
 /* HERO */
@@ -67,7 +66,7 @@ img,svg{display:block;}
 .section-header h2{font-size:clamp(1.2rem,1.8vw,1.55rem);white-space:nowrap;}
 .section-header-rule{height:1px;background:linear-gradient(90deg,rgba(184,136,42,0.5),transparent);}
 
-/* Divisions */
+/* DIVISIONS */
 .h-divisions{padding:clamp(4rem,8vw,6rem) 0;}
 .div-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--rule);}
 .div-card{padding:2.2rem 2rem;border-right:1px solid var(--rule);position:relative;}
@@ -79,7 +78,7 @@ img,svg{display:block;}
 .div-card li{font-size:0.85rem;color:var(--ink-light);line-height:1.6;padding:0.4rem 0;border-top:1px solid var(--rule);}
 .div-card li:first-child{border-top:none;}
 
-/* Platforms */
+/* PLATFORMS */
 .h-svc{padding:clamp(4rem,8vw,6rem) 0;border-top:1px solid var(--rule);}
 .svc-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border:1px solid var(--rule);}
 .svc-card{padding:2rem 1.8rem;border-right:1px solid var(--rule);transition:background .2s;position:relative;}
@@ -95,8 +94,8 @@ img,svg{display:block;}
 .footer-cta h2{font-size:clamp(1.3rem,2.3vw,1.8rem);color:var(--cream);}
 .footer-cta p{color:var(--sage);margin-top:0.5rem;font-size:0.92rem;}
 
-/* PLATFORM PAGE */
-.pf-hero{padding:clamp(3.5rem,7vw,5.5rem) 0 1.5rem;}
+/* INTAKE FORM */
+.pf-hero{padding:clamp(3.5rem,7vw,5.5rem) 0 1.5rem;border-top:1px solid var(--rule);}
 .pf-kicker{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--moss);margin-bottom:1.1rem;}
 .pf-hero h1{font-size:clamp(1.6rem,3vw,2.3rem);color:var(--forest);margin-bottom:0.9rem;}
 .pf-hero p{font-size:1.02rem;color:var(--ink-light);line-height:1.65;max-width:68ch;}
@@ -108,10 +107,7 @@ img,svg{display:block;}
 .intake-field label{display:block;font-family:'IBM Plex Mono',monospace;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--moss);margin-bottom:0.5rem;}
 .intake-field input,.intake-field select{width:100%;padding:0.8rem 0.9rem;border:1px solid var(--rule);background:var(--cream);font-family:'Public Sans',sans-serif;font-size:0.93rem;color:var(--ink);border-radius:2px;outline:none;-webkit-appearance:none;}
 .intake-field input:focus,.intake-field select:focus{border-color:var(--moss);}
-.intake-submit{background:var(--forest);color:var(--cream);padding:0.95rem;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:0.04em;margin-top:0.3rem;transition:opacity .18s;}
-.intake-submit:hover{opacity:.85;}
-.intake-note{font-size:0.75rem;color:var(--ink-light);margin-top:-0.4rem;}
-.intake-success{display:none;background:var(--forest);color:var(--cream);padding:1rem;border-radius:2px;font-size:0.88rem;margin-top:0.5rem;}
+.intake-submit{background:var(--forest);color:var(--cream);padding:0.95rem;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:0.04em;margin-top:0.3rem;transition:opacity .18s;width:100%;}
 
 .sector-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid var(--rule);margin-top:2rem;}
 .sector-card{padding:2.2rem;border-right:1px solid var(--rule);}
@@ -122,8 +118,8 @@ img,svg{display:block;}
 .sector-item h4{font-size:0.9rem;color:var(--clay);margin-bottom:0.3rem;font-family:'Public Sans',sans-serif;font-weight:600;}
 .sector-item p{font-size:0.85rem;color:var(--ink-light);line-height:1.6;}
 
-/* CAPITAL & CLOUD PAGE */
-.cc-hero{padding:clamp(3.5rem,7vw,5.5rem) 0 2rem;}
+/* CAPITAL & CLOUD */
+.cc-hero{padding:clamp(3.5rem,7vw,5.5rem) 0 2rem;border-top:1px solid var(--rule);}
 .cc-hero h1{font-size:clamp(1.6rem,3vw,2.3rem);color:var(--forest);margin-bottom:0.9rem;}
 .cc-hero p{font-size:1.02rem;color:var(--ink-light);line-height:1.65;max-width:70ch;}
 
@@ -143,11 +139,8 @@ img,svg{display:block;}
 
 .cc-note{font-size:0.82rem;color:var(--ink-light);font-style:italic;margin-top:1.2rem;border-left:2px solid var(--gold);padding-left:1rem;}
 
-.bottom-cta{background:var(--forest);color:var(--cream);padding:clamp(3rem,6vw,4.5rem) 0;margin-top:1rem;}
-.bottom-cta-inner{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;}
-
-/* CONTACT PAGE */
-.cp{padding:clamp(3.5rem,7vw,5.5rem) 0;}
+/* CONTACT */
+.cp{padding:clamp(3.5rem,7vw,5.5rem) 0;border-top:1px solid var(--rule);}
 .cp-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4rem);align-items:start;}
 .cp-left h1{font-size:clamp(1.7rem,2.8vw,2.3rem);color:var(--forest);margin-bottom:1.1rem;}
 .cp-left > p{font-size:0.95rem;color:var(--ink-light);line-height:1.7;margin-bottom:2.5rem;}
@@ -162,9 +155,7 @@ form{display:flex;flex-direction:column;gap:1.2rem;}
 .field input,.field select,.field textarea{width:100%;padding:0.8rem 0.9rem;border:1px solid var(--rule);background:var(--cream);font-family:'Public Sans',sans-serif;font-size:0.93rem;color:var(--ink);border-radius:2px;outline:none;-webkit-appearance:none;}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--moss);}
 .field textarea{min-height:100px;resize:vertical;}
-.form-btn{background:var(--forest);color:var(--cream);padding:0.9rem;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:0.76rem;letter-spacing:0.04em;transition:opacity .18s;margin-top:0.2rem;}
-.form-btn:hover{opacity:.85;}
-.form-note{font-size:0.73rem;color:var(--ink-light);margin-top:-0.4rem;}
+.form-btn{background:var(--forest);color:var(--cream);padding:0.9rem;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:0.76rem;letter-spacing:0.04em;transition:opacity .18s;margin-top:0.2rem;width:100%;}
 
 footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
 .footer-top{display:grid;grid-template-columns:1fr auto;gap:2.5rem;padding-bottom:2.2rem;border-bottom:1px solid rgba(255,255,255,0.07);align-items:start;}
@@ -203,11 +194,387 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
 </style>
 </head>
 <body>
-<a href="#main-content" style="position:absolute;left:-9999px;top:0;background:#1C3327;color:#F5F1E8;padding:0.8rem 1.2rem;z-index:300;font-family:'IBM Plex Mono',monospace;font-size:0.8rem;" onfocus="this.style.left='0'" onblur="this.style.left='-9999px'">Skip to main content</a>
 
-<!-- ══ NAV ══ -->
+<!-- NAV -->
 <nav class="nav">
-  <div class="brand" onclick="goPage('home')" role="button" tabindex="0" aria-label="Phoenix CleanTech Group home">
+  <a href="#home" class="brand">
     <svg viewBox="8 2 68 88" fill="none" aria-hidden="true">
       <path d="M42 90 C18 76 8 56 8 40 C8 22 18 10 30 2 C28 14 32 22 38 28 C36 18 40 10 42 2 C44 10 48 18 46 28 C52 22 56 14 54 2 C66 10 76 22 76 40 C76 56 66 76 42 90 Z" fill="#1C3327"/>
-      <path d="M42 78 C28 6
+      <path d="M42 78 C28 66 22 52 22 40 C22 30 28 22 34 16 C33 24 36 30 40 34 C39 26 41 20 42 14 C43 20 45 26 44 34 C48 30 51 24 50 16 C56 22 62 30 62 40 C62 52 56 66 42 78 Z" fill="#C99A4A"/>
+      <path d="M42 64 C34 56 30 46 30 38 C30 32 34 26 38 22 C37 28 39 33 42 36 C45 33 47 28 46 22 C50 26 54 32 54 38 C54 46 50 56 42 64 Z" fill="#B95E33"/>
+    </svg>
+    <div class="brand-name"><span class="c1">Phoenix</span> CleanTech Group</div>
+  </a>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#platform">Platform &amp; Solutions</a>
+    <a href="#capital">Capital &amp; AI Gateway</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-ctas">
+    <a href="#contact" class="nav-cta-secondary">Book a Technical Briefing</a>
+    <a href="#intake" class="nav-cta-primary">Submit Your Project</a>
+  </div>
+</nav>
+
+<!-- HOME SECTION -->
+<div class="page-section" id="home">
+  <section class="h-hero">
+    <div class="wrap">
+      <div class="h-hero-body">
+        <div class="h-hero-left">
+          <div class="h-hero-kicker">Green Finance &amp; Energy Transition</div>
+          <h1 class="h-hero-h1">AI-powered platforms for Net Zero.</h1>
+        </div>
+        <div class="h-hero-right">
+          <p class="h-hero-desc" style="color:var(--gold-light);">For local authorities, housing associations, schools &amp; universities, and community energy organisations — reducing energy costs and the wider cost of living, from business case to commissioning.</p>
+          <div class="h-hero-btns">
+            <a href="#intake" class="btn btn-primary">Submit Your Project</a>
+            <a href="#contact" class="btn btn-secondary">Book a Technical Briefing</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="h-stats">
+      <div class="h-stat"><div class="h-stat-val">End-to-End</div><div class="h-stat-lab">Origination to delivery</div></div>
+      <div class="h-stat"><div class="h-stat-val">Solar · Wind · BESS · Climate Tech Innovation</div><div class="h-stat-lab">Technology coverage</div></div>
+      <div class="h-stat"><div class="h-stat-val">Public &amp; Education Sector</div><div class="h-stat-lab">Schools, universities &amp; estates</div></div>
+      <div class="h-stat"><div class="h-stat-val">Now Onboarding</div><div class="h-stat-lab">Phase 2 pilot intake</div></div>
+    </div>
+  </section>
+
+  <section class="h-divisions">
+    <div class="wrap">
+      <div class="section-header">
+        <h2>The Phoenix CleanTech ecosystem — three divisions</h2>
+        <div class="section-header-rule"></div>
+      </div>
+      <div class="div-grid">
+        <div class="div-card">
+          <div class="div-tag">B2B Ecosystem Engine</div>
+          <h3>Phoenix CleanTech Platform</h3>
+          <ul>
+            <li>"Submit Your Project" intake portal</li>
+            <li>Turnkey workflow tools for public sector, schools, and climate tech developers</li>
+            <li>Subscription modules for campus decarbonisation &amp; climate innovation</li>
+          </ul>
+        </div>
+        <div class="div-card">
+          <div class="div-tag">Capital &amp; Investment QA</div>
+          <h3>Phoenix CleanTech Capital</h3>
+          <ul>
+            <li>Bankability by Design — financial QA and ESG risk scoring via embedded ClimStudio</li>
+            <li>Public sector grant matching (PSDS, Salix, Scottish Government Net Zero funds)</li>
+            <li>Co-investment matching for green infrastructure &amp; portfolio ventures</li>
+          </ul>
+        </div>
+        <div class="div-card">
+          <div class="div-tag">Enterprise AI Gateway</div>
+          <h3>Phoenix CleanTech Cloud</h3>
+          <ul>
+            <li>Enterprise AI gateway powered by AWS for unified, governed LLM routing</li>
+            <li>Multi-model orchestration for Anthropic Claude, Meta Llama, and domain micro-models</li>
+            <li>Model telemetry, token usage arbitrage, and delegated security guardrails</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="h-svc">
+    <div class="wrap">
+      <div class="section-header">
+        <h2>Four subscription platforms</h2>
+        <div class="section-header-rule"></div>
+      </div>
+      <div class="svc-cards">
+        <div class="svc-card">
+          <div class="svc-icon" aria-hidden="true">◈</div>
+          <div class="svc-tag">Phoenix CleanTech Platform</div>
+          <h3>Campus &amp; public estate decarbonisation</h3>
+          <p>Purpose-built for school trusts, university estates directors, and local authorities — automated business cases, solar/BESS feasibility, BMS optimisation, and heat pump transition models.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon" aria-hidden="true">◉</div>
+          <div class="svc-tag">Phoenix CleanTech Platform</div>
+          <h3>Climate tech innovation engine</h3>
+          <p>Intake and development portal for clean mobility, smart grid tools, sustainable infrastructure, and energy efficiency ventures to build, launch, and scale.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon" aria-hidden="true">◐</div>
+          <div class="svc-tag">Phoenix CleanTech Capital</div>
+          <h3>Bankability &amp; co-investment engine</h3>
+          <p>Automated financial QA, ESG risk profiling, and Bankability by Design scoring powered by ClimStudio to help unlock PSDS, Salix Finance, and co-investment funds for submitted projects.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon" aria-hidden="true">◇</div>
+          <div class="svc-tag">Phoenix CleanTech Cloud</div>
+          <h3>CleanCloud AI gateway</h3>
+          <p>Enterprise-grade model orchestration routing domain-specific AI models for climate risk simulation, building management systems, and regulatory compliance logic.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- PLATFORM & INTAKE SECTION -->
+<div class="page-section" id="platform">
+  <section class="pf-hero">
+    <div class="wrap">
+      <div class="pf-kicker">Phoenix CleanTech Platform</div>
+      <h1>From project intake to capital commissioning.</h1>
+      <p>Submit your climate initiative, campus decarbonisation project, or climate tech start-up to access AI workflows, technical feasibility tools, and public co-investment pipelines.</p>
+    </div>
+  </section>
+
+  <section class="intake-wrap" id="intake">
+    <div class="wrap">
+      <div class="intake-box">
+        <div class="intake-title">Project Intake &amp; Evaluation Portal</div>
+        <form class="intake-form">
+          <div class="intake-field">
+            <label>1. Organisation Type</label>
+            <select required>
+              <option value="">Select organisation type</option>
+              <option>School / University / Educational Trust</option>
+              <option>Local Authority</option>
+              <option>Housing Association</option>
+              <option>Community Energy Group</option>
+              <option>Climate Tech Developer / Start-up</option>
+            </select>
+          </div>
+          <div class="intake-field">
+            <label>2. Technology Category</label>
+            <select required>
+              <option value="">Select technology focus</option>
+              <option>Solar PV &amp; Battery Storage (BESS)</option>
+              <option>Wind Energy</option>
+              <option>Heat Pumps / BMS</option>
+              <option>Campus Microgrid</option>
+              <option>Climate Tech / Greentech Innovation</option>
+            </select>
+          </div>
+          <div class="intake-field">
+            <label>3. Target Funding Pipeline</label>
+            <select required>
+              <option value="">Select primary capital need</option>
+              <option>Public Sector Grant (PSDS, Salix, Scottish Government)</option>
+              <option>Private Co-Investment</option>
+              <option>Debt Financing</option>
+              <option>Self-Funded</option>
+            </select>
+          </div>
+          <div class="intake-field">
+            <label>4. Project Details</label>
+            <input type="text" placeholder="Brief description, estimated capex, or site specs">
+          </div>
+          <div class="intake-field">
+            <label>Contact Email</label>
+            <input type="email" required placeholder="you@organisation.org">
+          </div>
+          <button type="button" class="intake-submit">Submit for ClimStudio Assessment &amp; Grant Matching</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(2rem,4vw,3rem) 0 clamp(4rem,8vw,6rem);">
+    <div class="wrap">
+      <div class="section-header">
+        <h2>Sector-specific solutions</h2>
+        <div class="section-header-rule"></div>
+      </div>
+      <div class="sector-grid">
+        <div class="sector-card">
+          <h3>For Schools &amp; Universities</h3>
+          <div class="sector-item">
+            <h4>Campus Net Zero</h4>
+            <p>Automated business cases for school trusts and university estates.</p>
+          </div>
+          <div class="sector-item">
+            <h4>Grant Readiness</h4>
+            <p>Output formatted for Public Sector Decarbonisation Scheme (PSDS) and Salix funding applications.</p>
+          </div>
+          <div class="sector-item">
+            <h4>Cost Reduction</h4>
+            <p>Direct reduction of campus heating and electricity bills through peak-shaving BESS and solar PV.</p>
+          </div>
+        </div>
+        <div class="sector-card">
+          <h3>For Climate Tech &amp; Greentech Innovators</h3>
+          <div class="sector-item">
+            <h4>Fast-Track Onboarding</h4>
+            <p>Intake for clean mobility, smart grid, and carbon tech start-ups.</p>
+          </div>
+          <div class="sector-item">
+            <h4>Platform Integration</h4>
+            <p>Connect your own software tools directly to the Phoenix CleanTech ecosystem.</p>
+          </div>
+          <div class="sector-item">
+            <h4>Venture Scaling</h4>
+            <p>Access Phoenix CleanTech Capital's deal-structuring and public co-investment matching.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CAPITAL & CLOUD SECTION -->
+<div class="page-section" id="capital">
+  <section class="cc-hero">
+    <div class="wrap">
+      <div class="pf-kicker">Phoenix CleanTech Capital &amp; Phoenix CleanTech Cloud</div>
+      <h1>Institutional capital matching &amp; enterprise AI infrastructure.</h1>
+      <p>Bridging the gap between climate projects, public grants, and high-performance AI model orchestration.</p>
+    </div>
+  </section>
+
+  <section class="pillar" style="border-top:none;">
+    <div class="wrap">
+      <div class="pillar-label">Pillar 01</div>
+      <h2>Phoenix CleanTech Capital</h2>
+      <p style="font-size:0.95rem;color:var(--ink-mid);line-height:1.7;max-width:74ch;">Phoenix CleanTech Capital assesses submitted projects for financial and ESG bankability, then matches them to the most appropriate funding route — with a stated preference for public sector co-investment over pure private equity exit structures.</p>
+
+      <div class="flow-strip">
+        <span class="flow-step">Submitted Project</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">ClimStudio Assessment Engine</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">Public / Private Co-Investment</span>
+      </div>
+
+      <div class="pillar-list">
+        <div class="pillar-item">
+          <h4>Bankability by Design</h4>
+          <p>Evaluates campus decarbonisation and climate tech assets with financial QA, ESG indexing, and climate risk profiling powered by the embedded ClimStudio engine.</p>
+        </div>
+        <div class="pillar-item">
+          <h4>Public Sector Grant Matching</h4>
+          <p>Routes qualifying school, university, and public sector projects directly into PSDS, Salix Finance, and Scottish Government Net Zero funding streams.</p>
+        </div>
+        <div class="pillar-item">
+          <h4>Funding Deployment</h4>
+          <p>Prepares bankable investment cases for Scottish Enterprise, the UK Infrastructure Bank, and co-investment funds.</p>
+        </div>
+      </div>
+
+      <p class="cc-note">In strategic alignment with academic research initiatives (such as Horizon Europe's Climinvest framework with partners at the University of Glasgow), Phoenix CleanTech Capital embeds ClimStudio to deliver automated financial QA and risk verification.</p>
+    </div>
+  </section>
+
+  <section class="pillar">
+    <div class="wrap">
+      <div class="pillar-label">Pillar 02</div>
+      <h2>Phoenix CleanTech Cloud</h2>
+      <p style="font-size:0.95rem;color:var(--ink-mid);line-height:1.7;max-width:74ch;">An enterprise AI gateway powered by AWS — providing organisations with unified, governed access to leading global AI models without the complexity of managing individual provider integrations.</p>
+
+      <div class="pillar-list">
+        <div class="pillar-item">
+          <h4>Universal API Gateway</h4>
+          <p>Enterprise model orchestration delivering secure access to leading frontier models (including Anthropic Claude via Amazon Bedrock) with multi-model routing and domain-specific LLM integration on our active product roadmap.</p>
+        </div>
+        <div class="pillar-item">
+          <h4>Enterprise Control &amp; Guardrails</h4>
+          <p>Unified token routing, real-time usage telemetry, and delegated security guardrails built specifically for high-scale enterprise workloads.</p>
+        </div>
+        <div class="pillar-item">
+          <h4>Domain AI Micro-Models</h4>
+          <p>Optimised API endpoints tuned for building management system (BMS) telemetry, regulatory compliance frameworks, and climate adaptation simulations.</p>
+        </div>
+      </div>
+
+      <p class="cc-note">CleanCloud's gateway infrastructure leverages production-grade Amazon Bedrock and AWS services, with expanded multi-provider orchestration active on our continuous delivery roadmap.</p>
+    </div>
+  </section>
+</div>
+
+<!-- CONTACT SECTION -->
+<div class="page-section" id="contact">
+  <div class="wrap cp">
+    <div class="cp-inner">
+      <div class="cp-left">
+        <h1>Book a Technical Briefing</h1>
+        <p>Engage directly with our technical team to discuss campus decarbonisation, climate tech intake, or AI model gateway integration.</p>
+        <div class="cp-details">
+          <div class="cp-detail">
+            <div class="cp-detail-label">Entity</div>
+            <div class="cp-detail-val">Phoenix Cleantech Ltd (SC894315)</div>
+          </div>
+          <div class="cp-detail">
+            <div class="cp-detail-label">Primary Client Focus</div>
+            <div class="cp-detail-val">Schools, Universities, Local Authorities &amp; Climate Tech Innovators</div>
+          </div>
+          <div class="cp-detail">
+            <div class="cp-detail-label">Infrastructure Partner Tier</div>
+            <div class="cp-detail-val">AWS Infrastructure &amp; Bedrock Gateway</div>
+          </div>
+        </div>
+      </div>
+      <div class="cp-form-wrap">
+        <form>
+          <div class="field">
+            <label>Name</label>
+            <input type="text" required placeholder="Your full name">
+          </div>
+          <div class="field">
+            <label>Organisation</label>
+            <input type="text" required placeholder="School Trust, University, Council, or Company">
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input type="email" required placeholder="name@organisation.gov.uk">
+          </div>
+          <div class="field">
+            <label>Area of Interest</label>
+            <select required>
+              <option value="">Select briefing topic</option>
+              <option>Campus / Estate Decarbonisation</option>
+              <option>Submit a Climate Tech Project</option>
+              <option>Phoenix Capital / ClimStudio QA</option>
+              <option>CleanCloud AI Gateway API Access</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Message</label>
+            <textarea placeholder="Briefly describe your site, technology, or briefing objectives..."></textarea>
+          </div>
+          <button type="button" class="form-btn">Request Technical Briefing</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Phoenix CleanTech Group</div>
+        <div class="footer-tagline">Operating Division of Phoenix Cleantech Ltd (SC894315)</div>
+      </div>
+      <div class="footer-cols">
+        <div class="fc">
+          <div class="fc-title">Divisions</div>
+          <a href="#platform">Phoenix CleanTech Platform</a>
+          <a href="#capital">Phoenix CleanTech Capital</a>
+          <a href="#capital">Phoenix CleanTech Cloud</a>
+        </div>
+        <div class="fc">
+          <div class="fc-title">Navigation</div>
+          <a href="#home">Home</a>
+          <a href="#intake">Submit Your Project</a>
+          <a href="#contact">Book Briefing</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Phoenix Cleantech Ltd (SC894315). All rights reserved.</div>
+      <div>Solar · Wind · BESS · Climate Tech Innovation</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
