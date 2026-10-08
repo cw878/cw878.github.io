@@ -50,9 +50,9 @@ img,svg{display:block;}
 .h-hero-kicker::before{content:'';width:24px;height:1px;background:var(--gold);}
 .h-hero-left{display:flex;flex-direction:column;gap:1rem;max-width:820px;}
 .h-hero-h1{font-size:clamp(2rem,4.2vw,3.1rem);font-weight:500;color:var(--cream);line-height:1.12;}
-.h-hero-right{display:flex;flex-direction:column;gap:1.5rem;align-items:flex-start;width:100%;max-width:840px;}
+.h-hero-right{display:flex;flex-direction:column;gap:1.5rem;align-items:flex-start;width:100%;max-width:860px;}
 
-.h-hero-desc{font-size:1.08rem;color:rgba(247,243,235,0.85);line-height:1.5;max-width:72ch;}
+.h-hero-desc-exact{font-size:1.08rem;color:rgba(247,243,235,0.85);line-height:1.5;display:flex;flex-direction:column;gap:0.2rem;}
 
 .h-hero-btns{display:flex;gap:0.75rem;flex-wrap:wrap;}
 .btn-primary{background:var(--clay);color:var(--cream);padding:0.85rem 1.5rem;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:0.76rem;letter-spacing:0.04em;transition:opacity .18s;}
@@ -141,8 +141,7 @@ img,svg{display:block;}
 .pillar-item h4{font-size:1rem;color:var(--forest);margin-bottom:0.6rem;}
 .pillar-item p{font-size:0.85rem;color:var(--ink-light);line-height:1.6;}
 
-/* TWO-ROW TEXT FLOW CLASS */
-.two-row-desc{font-size:0.95rem;color:var(--ink-mid);line-height:1.5;max-width:78ch;}
+.two-row-desc-exact{display:flex;flex-direction:column;gap:0.2rem;font-size:0.95rem;color:var(--ink-mid);line-height:1.5;}
 
 .cc-note{font-size:0.82rem;color:var(--ink-light);font-style:italic;margin-top:1.2rem;border-left:2px solid var(--gold);padding-left:1rem;}
 
@@ -240,8 +239,10 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
           <h1 class="h-hero-h1">AI-powered platforms for Net Zero.</h1>
         </div>
         <div class="h-hero-right">
-          <!-- NATURAL 2-ROW HERO DESC WITHOUT DASH -->
-          <p class="h-hero-desc">For local authorities, housing associations, schools &amp; universities, and community energy organisations reducing energy costs and the wider cost of living, from business case to commissioning.</p>
+          <div class="h-hero-desc-exact">
+            <div>For local authorities, housing associations, schools &amp; universities, and community energy organisations</div>
+            <div>reducing energy costs and the wider cost of living, from business case to commissioning.</div>
+          </div>
           <div class="h-hero-btns">
             <a href="#intake" class="btn btn-primary">Submit Your Project</a>
             <a href="#contact" class="btn btn-secondary">Book a Technical Briefing</a>
@@ -293,7 +294,7 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
           <h3>Phoenix CleanTech Cloud</h3>
           <ul>
             <li>AWS-powered gateway for unified, governed LLM routing</li>
-            <li>Frontier model orchestration (Anthropic Claude via Amazon Bedrock)</li>
+            <li>Frontier model orchestration</li>
             <li>Model telemetry, token usage arbitrage, and security guardrails</li>
           </ul>
         </div>
@@ -454,8 +455,10 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
     <div class="wrap">
       <div class="pillar-label">Pillar 01</div>
       <h2>Phoenix CleanTech Capital</h2>
-      <!-- NATURAL 2-ROW CAPITAL DESC WITHOUT DASH -->
-      <p class="two-row-desc">Phoenix CleanTech Capital assesses submitted projects for financial and ESG bankability, then matches them to the most appropriate funding route with a stated preference for public sector co-investment over pure private equity exit structures.</p>
+      <div class="two-row-desc-exact">
+        <div>Phoenix CleanTech Capital assesses submitted projects for financial and ESG bankability, then matches</div>
+        <div>them to the most appropriate funding route with a stated preference for public sector co-investment over pure private equity exit structures.</div>
+      </div>
 
       <div class="flow-strip">
         <span class="flow-step">Submitted Project</span>
@@ -488,13 +491,12 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
     <div class="wrap">
       <div class="pillar-label">Pillar 02</div>
       <h2>Phoenix CleanTech Cloud</h2>
-      <!-- FULL-ROW FLUID 2-LINE CLOUD DESC -->
-      <p class="two-row-desc">An enterprise AI gateway powered by AWS — providing organisations with unified, governed access to leading global AI models without the complexity of managing individual provider integrations.</p>
+      <p class="two-row-desc-exact">An enterprise AI gateway powered by AWS — providing organisations with unified, governed access to leading global AI models without the complexity of managing individual provider integrations.</p>
 
       <div class="pillar-list">
         <div class="pillar-item">
           <h4>Universal API Gateway</h4>
-          <p>Enterprise model orchestration delivering secure access to leading frontier models (including Anthropic Claude via Amazon Bedrock) with multi-model routing and domain-specific LLM integration on our active product roadmap.</p>
+          <p>Enterprise model orchestration delivering secure access to leading frontier models with multi-model routing and domain-specific LLM integration on our active product roadmap.</p>
         </div>
         <div class="pillar-item">
           <h4>Enterprise Control &amp; Guardrails</h4>
