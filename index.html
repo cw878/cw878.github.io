@@ -86,13 +86,12 @@ img,svg{display:block;}
 
 /* PLATFORMS */
 .h-svc{padding:clamp(4rem,8vw,6rem) 0;border-top:1px solid var(--rule);}
-.svc-intro{font-size:0.95rem;color:var(--ink-mid);line-height:1.7;margin-bottom:2rem;max-width:76ch;}
+.svc-intro-row{font-size:0.95rem;color:var(--ink-mid);line-height:1.7;margin-bottom:2rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .svc-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border:1px solid var(--rule);}
 .svc-card{padding:2rem 1.8rem;border-right:1px solid var(--rule);transition:background .2s;position:relative;}
 .svc-card:last-child{border-right:none;}
 .svc-card:hover{background:var(--cream-dark);}
 .svc-icon{width:36px;height:36px;border-radius:50%;background:var(--cream-dark);display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;font-size:1rem;}
-.svc-tag{font-family:'IBM Plex Mono',monospace;font-size:0.62rem;color:var(--clay);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.6rem;}
 .svc-card h3{font-size:1.02rem;margin-bottom:0.6rem;color:var(--forest);line-height:1.3;}
 .svc-card p{font-size:0.85rem;color:var(--ink-light);line-height:1.65;}
 .svc-footnote{font-size:0.88rem;color:var(--ink-mid);line-height:1.65;margin-top:2rem;padding:1.2rem 1.5rem;background:var(--cream-dark);border:1px solid var(--rule);border-radius:2px;}
@@ -145,6 +144,8 @@ img,svg{display:block;}
 .pillar-item h4{font-size:1rem;color:var(--forest);margin-bottom:0.6rem;}
 .pillar-item p{font-size:0.85rem;color:var(--ink-light);line-height:1.6;}
 
+.two-row-desc{display:flex;flex-direction:column;gap:0.25rem;font-size:0.95rem;color:var(--ink-mid);line-height:1.5;max-width:74ch;}
+
 .cc-note{font-size:0.82rem;color:var(--ink-light);font-style:italic;margin-top:1.2rem;border-left:2px solid var(--gold);padding-left:1rem;}
 
 /* CONTACT */
@@ -182,6 +183,7 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
   .div-card{border-right:none;border-bottom:1px solid var(--rule);}
   .div-card:last-child{border-bottom:none;}
   .svc-cards{grid-template-columns:repeat(2,1fr);}
+  .svc-intro-row{white-space:normal;}
   .sector-grid{grid-template-columns:1fr;}
   .sector-card{border-right:none;border-bottom:1px solid var(--rule);}
   .pillar-list{grid-template-columns:1fr;}
@@ -286,9 +288,9 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
           <div class="div-tag">Enterprise AI Gateway</div>
           <h3>Phoenix CleanTech Cloud</h3>
           <ul>
-            <li>Enterprise AI gateway powered by AWS for unified, governed LLM routing</li>
-            <li>Enterprise orchestration delivering secure access to leading frontier models (including Anthropic Claude via Amazon Bedrock) with multi-model routing and domain-specific LLM integration on our active product roadmap.</li>
-            <li>Model telemetry, token usage arbitrage, and delegated security guardrails</li>
+            <li>AWS-powered gateway for unified, governed LLM routing</li>
+            <li>Frontier model orchestration (Anthropic Claude via Amazon Bedrock)</li>
+            <li>Model telemetry, token usage arbitrage, and security guardrails</li>
           </ul>
         </div>
       </div>
@@ -301,29 +303,25 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
         <h2>Four Core Platforms</h2>
         <div class="section-header-rule"></div>
       </div>
-      <p class="svc-intro">Phoenix CleanTech's offer centres on four core platforms, connected by a single shared data layer, plus an AI &amp; Data extension layer:</p>
+      <p class="svc-intro-row">Phoenix CleanTech's offer centres on four core platforms, connected by a single shared data layer, plus an AI &amp; Data extension layer:</p>
       <div class="svc-cards">
         <div class="svc-card">
           <div class="svc-icon" aria-hidden="true">◈</div>
-          <div class="svc-tag">Phoenix Platform</div>
           <h3>Funding &amp; Grant Application Platform</h3>
           <p>Structured, AI-assisted preparation and submission of funding applications.</p>
         </div>
         <div class="svc-card">
           <div class="svc-icon" aria-hidden="true">◉</div>
-          <div class="svc-tag">Phoenix Platform</div>
           <h3>Automated Financial Modelling Platform</h3>
           <p>Ingests project data directly from a client's data room to generate investment-grade financial performance outputs.</p>
         </div>
         <div class="svc-card">
           <div class="svc-icon" aria-hidden="true">◐</div>
-          <div class="svc-tag">Phoenix Platform</div>
           <h3>Procurement &amp; Supplier Bidding Platform</h3>
           <p>Connects to a supplier portal for tender invitation and bid management.</p>
         </div>
         <div class="svc-card">
           <div class="svc-icon" aria-hidden="true">◇</div>
-          <div class="svc-tag">Phoenix Platform</div>
           <h3>VPP Platform</h3>
           <p>Aggregates distributed generation and flexible demand across a community for dispatch, trading, and value-sharing.</p>
         </div>
@@ -485,7 +483,10 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
     <div class="wrap">
       <div class="pillar-label">Pillar 02</div>
       <h2>Phoenix CleanTech Cloud</h2>
-      <p style="font-size:0.95rem;color:var(--ink-mid);line-height:1.7;max-width:74ch;">An enterprise AI gateway powered by AWS — providing organisations with unified, governed access to leading global AI models without the complexity of managing individual provider integrations.</p>
+      <div class="two-row-desc">
+        <div>An enterprise AI gateway powered by AWS — providing organisations with unified, governed access</div>
+        <div>to leading global AI models without the complexity of managing individual provider integrations.</div>
+      </div>
 
       <div class="pillar-list">
         <div class="pillar-item">
