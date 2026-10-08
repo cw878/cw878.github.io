@@ -52,8 +52,7 @@ img,svg{display:block;}
 .h-hero-h1{font-size:clamp(2rem,4.2vw,3.1rem);font-weight:500;color:var(--cream);line-height:1.12;}
 .h-hero-right{display:flex;flex-direction:column;gap:1.5rem;align-items:flex-start;width:100%;max-width:840px;}
 
-/* 2-ROW HERO DESC */
-.h-hero-desc-2row{font-size:1.08rem;color:rgba(247,243,235,0.85);line-height:1.5;display:flex;flex-direction:column;gap:0.2rem;}
+.h-hero-desc{font-size:1.08rem;color:rgba(247,243,235,0.85);line-height:1.5;max-width:72ch;}
 
 .h-hero-btns{display:flex;gap:0.75rem;flex-wrap:wrap;}
 .btn-primary{background:var(--clay);color:var(--cream);padding:0.85rem 1.5rem;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:0.76rem;letter-spacing:0.04em;transition:opacity .18s;}
@@ -104,7 +103,6 @@ img,svg{display:block;}
 .pf-kicker{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--moss);margin-bottom:1.1rem;}
 .pf-hero h1{font-size:clamp(1.6rem,3vw,2.3rem);color:var(--forest);margin-bottom:0.9rem;}
 
-/* SINGLE-ROW TEXT HELPER */
 .single-row-text{font-size:1.02rem;color:var(--ink-light);line-height:1.65;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 
 .intake-wrap{padding:clamp(2.5rem,5vw,3.5rem) 0;}
@@ -143,28 +141,33 @@ img,svg{display:block;}
 .pillar-item h4{font-size:1rem;color:var(--forest);margin-bottom:0.6rem;}
 .pillar-item p{font-size:0.85rem;color:var(--ink-light);line-height:1.6;}
 
-/* TWO-ROW TEXT HELPER */
-.two-row-desc{display:flex;flex-direction:column;gap:0.25rem;font-size:0.95rem;color:var(--ink-mid);line-height:1.5;}
+/* TWO-ROW TEXT FLOW CLASS */
+.two-row-desc{font-size:0.95rem;color:var(--ink-mid);line-height:1.5;max-width:78ch;}
 
 .cc-note{font-size:0.82rem;color:var(--ink-light);font-style:italic;margin-top:1.2rem;border-left:2px solid var(--gold);padding-left:1rem;}
 
 /* CONTACT */
-.cp-wrap{padding:clamp(3.5rem,7vw,5.5rem) 0;border-top:1px solid var(--rule);}
-.cp-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4rem);align-items:start;}
-.cp-left h1{font-size:clamp(1.7rem,2.8vw,2.3rem);color:var(--forest);margin-bottom:1.1rem;}
-.cp-left > p{font-size:0.95rem;color:var(--ink-light);line-height:1.7;margin-bottom:2.5rem;}
+.cp-wrap{padding:clamp(3rem,6vw,4.5rem) 0;border-top:1px solid var(--rule);}
+.cp-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,3.5rem);align-items:start;}
+.cp-left h1{font-size:clamp(1.7rem,2.8vw,2.3rem);color:var(--forest);margin-bottom:0.8rem;}
+.cp-left > p{font-size:0.92rem;color:var(--ink-light);line-height:1.6;margin-bottom:1.8rem;}
 .cp-details{display:flex;flex-direction:column;}
-.cp-detail{padding:1rem 0;border-top:1px solid var(--rule);}
+.cp-detail{padding:0.75rem 0;border-top:1px solid var(--rule);}
 .cp-detail:last-child{border-bottom:1px solid var(--rule);}
-.cp-detail-label{font-family:'IBM Plex Mono',monospace;font-size:0.63rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--moss);margin-bottom:0.3rem;}
-.cp-detail-val{font-size:0.93rem;color:var(--ink);}
-.cp-form-wrap{background:var(--cream-dark);border:1px solid var(--rule);padding:2.2rem;border-radius:2px;}
-form{display:flex;flex-direction:column;gap:1.2rem;}
-.field label{display:block;font-family:'IBM Plex Mono',monospace;font-size:0.63rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--moss);margin-bottom:0.4rem;}
-.field input,.field select,.field textarea{width:100%;padding:0.8rem 0.9rem;border:1px solid var(--rule);background:var(--cream);font-family:'Public Sans',sans-serif;font-size:0.93rem;color:var(--ink);border-radius:2px;outline:none;-webkit-appearance:none;}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--moss);}
-.field textarea{min-height:100px;resize:vertical;}
-.form-btn{background:var(--forest);color:var(--cream);padding:0.9rem;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:0.76rem;letter-spacing:0.04em;transition:opacity .18s;margin-top:0.2rem;width:100%;}
+.cp-detail-label{font-family:'IBM Plex Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--moss);margin-bottom:0.2rem;}
+.cp-detail-val{font-size:0.9rem;color:var(--ink);}
+
+.cp-form-wrap{background:var(--cream-dark);border:1px solid var(--rule);padding:1.4rem 1.6rem;border-radius:2px;}
+.cp-form-wrap form{display:flex;flex-direction:column;gap:0.75rem;}
+.cp-form-wrap .field label{display:block;font-family:'IBM Plex Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--moss);margin-bottom:0.25rem;}
+.cp-form-wrap .field input,
+.cp-form-wrap .field select,
+.cp-form-wrap .field textarea{width:100%;padding:0.55rem 0.75rem;border:1px solid var(--rule);background:var(--cream);font-family:'Public Sans',sans-serif;font-size:0.88rem;color:var(--ink);border-radius:2px;outline:none;-webkit-appearance:none;}
+.cp-form-wrap .field input:focus,
+.cp-form-wrap .field select:focus,
+.cp-form-wrap .field textarea:focus{border-color:var(--moss);}
+.cp-form-wrap .field textarea{min-height:55px;height:55px;resize:none;}
+.cp-form-wrap .form-btn{background:var(--forest);color:var(--cream);padding:0.75rem;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:0.74rem;letter-spacing:0.04em;transition:opacity .18s;margin-top:0.1rem;width:100%;}
 
 footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
 .footer-top{display:grid;grid-template-columns:1fr auto;gap:2.5rem;padding-bottom:2.2rem;border-bottom:1px solid rgba(255,255,255,0.07);align-items:start;}
@@ -237,11 +240,8 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
           <h1 class="h-hero-h1">AI-powered platforms for Net Zero.</h1>
         </div>
         <div class="h-hero-right">
-          <!-- REQUIREMENT 1: 2-ROW HERO DESC -->
-          <div class="h-hero-desc-2row">
-            <div>For local authorities, housing associations, schools &amp; universities, and community energy organisations —</div>
-            <div>reducing energy costs and the wider cost of living, from business case to commissioning.</div>
-          </div>
+          <!-- NATURAL 2-ROW HERO DESC WITHOUT DASH -->
+          <p class="h-hero-desc">For local authorities, housing associations, schools &amp; universities, and community energy organisations reducing energy costs and the wider cost of living, from business case to commissioning.</p>
           <div class="h-hero-btns">
             <a href="#intake" class="btn btn-primary">Submit Your Project</a>
             <a href="#contact" class="btn btn-secondary">Book a Technical Briefing</a>
@@ -343,7 +343,6 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
     <div class="wrap">
       <div class="pf-kicker">Phoenix CleanTech Platform</div>
       <h1>From project intake to capital commissioning.</h1>
-      <!-- REQUIREMENT 2: SINGLE-ROW PLATFORM HERO DESC -->
       <p class="single-row-text">Submit your climate initiative, campus decarbonisation project, or climate tech start-up to access AI workflows, technical feasibility tools, and public co-investment pipelines.</p>
     </div>
   </section>
@@ -447,7 +446,6 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
     <div class="wrap">
       <div class="pf-kicker">Phoenix CleanTech Capital &amp; Phoenix CleanTech Cloud</div>
       <h1>Institutional capital matching &amp; enterprise AI infrastructure.</h1>
-      <!-- REQUIREMENT 3: SINGLE-ROW CAPITAL & CLOUD HERO DESC -->
       <p class="single-row-text">Bridging the gap between climate projects, public grants, and high-performance AI model orchestration.</p>
     </div>
   </section>
@@ -456,11 +454,8 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
     <div class="wrap">
       <div class="pillar-label">Pillar 01</div>
       <h2>Phoenix CleanTech Capital</h2>
-      <!-- REQUIREMENT 4: 2-ROW CAPITAL PILLAR DESC -->
-      <div class="two-row-desc">
-        <div>Phoenix CleanTech Capital assesses submitted projects for financial and ESG bankability, then matches them to the most appropriate funding route —</div>
-        <div>with a stated preference for public sector co-investment over pure private equity exit structures.</div>
-      </div>
+      <!-- NATURAL 2-ROW CAPITAL DESC WITHOUT DASH -->
+      <p class="two-row-desc">Phoenix CleanTech Capital assesses submitted projects for financial and ESG bankability, then matches them to the most appropriate funding route with a stated preference for public sector co-investment over pure private equity exit structures.</p>
 
       <div class="flow-strip">
         <span class="flow-step">Submitted Project</span>
@@ -493,11 +488,8 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
     <div class="wrap">
       <div class="pillar-label">Pillar 02</div>
       <h2>Phoenix CleanTech Cloud</h2>
-      <!-- REQUIREMENT 5: 2-ROW CLOUD PILLAR DESC -->
-      <div class="two-row-desc">
-        <div>An enterprise AI gateway powered by AWS — providing organisations with unified, governed access</div>
-        <div>to leading global AI models without the complexity of managing individual provider integrations.</div>
-      </div>
+      <!-- FULL-ROW FLUID 2-LINE CLOUD DESC -->
+      <p class="two-row-desc">An enterprise AI gateway powered by AWS — providing organisations with unified, governed access to leading global AI models without the complexity of managing individual provider integrations.</p>
 
       <div class="pillar-list">
         <div class="pillar-item">
@@ -568,7 +560,7 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
             </div>
             <div class="field">
               <label>Message</label>
-              <textarea placeholder="Briefly describe your site, technology, or briefing objectives..."></textarea>
+              <textarea rows="2" placeholder="Briefly describe your site, technology, or briefing objectives..."></textarea>
             </div>
             <button type="button" class="form-btn">Request Technical Briefing</button>
           </form>
