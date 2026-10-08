@@ -42,7 +42,7 @@ img,svg{display:block;}
 @keyframes appear{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
 .wrap{max-width:1160px;margin:0 auto;padding:0 clamp(1.5rem,5vw,4.5rem);}
 
-/* HERO (shared pattern) */
+/* HERO */
 .h-hero{background:var(--forest);color:var(--cream);padding:clamp(3.5rem,6vw,5.5rem) 0 0 0;position:relative;overflow:hidden;}
 .h-hero-body{max-width:1160px;margin:0 auto;padding:0 clamp(1.5rem,5vw,4rem);padding-bottom:clamp(2.5rem,5vw,3.5rem);display:flex;flex-direction:column;gap:1.5rem;}
 .h-hero-kicker{font-family:'IBM Plex Mono',monospace;font-size:0.8rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--sage);display:flex;align-items:center;gap:0.75rem;}
@@ -56,19 +56,18 @@ img,svg{display:block;}
 .btn-primary:hover{opacity:.88;}
 .btn-secondary{background:transparent;color:var(--cream);border:1px solid rgba(255,255,255,0.25);padding:0.85rem 1.5rem;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:0.76rem;letter-spacing:0.04em;transition:border-color .18s;}
 .btn-secondary:hover{border-color:rgba(255,255,255,0.55);}
-.principle-chip:hover{opacity:.88;}
 
 .h-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:1160px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.15);border-bottom:1px solid rgba(255,255,255,0.15);}
 .h-stat{padding:1.4rem 1.6rem;border-right:1px solid rgba(255,255,255,0.08);}
 .h-stat:last-child{border-right:none;}
-.h-stat-val{font-family:'Lora',serif;font-size:1.2rem;color:var(--gold-light);margin-bottom:0.2rem;}
+.h-stat-val{font-family:'Lora',serif;font-size:1.15rem;color:var(--gold-light);margin-bottom:0.2rem;}
 .h-stat-lab{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(143,175,138,0.75);}
 
 .section-header{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:2rem;margin-bottom:2.5rem;padding-bottom:1.3rem;border-bottom:1px solid var(--rule);}
 .section-header h2{font-size:clamp(1.2rem,1.8vw,1.55rem);white-space:nowrap;}
 .section-header-rule{height:1px;background:linear-gradient(90deg,rgba(184,136,42,0.5),transparent);}
 
-/* Division cards (3-way group architecture) */
+/* Divisions */
 .h-divisions{padding:clamp(4rem,8vw,6rem) 0;}
 .div-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--rule);}
 .div-card{padding:2.2rem 2rem;border-right:1px solid var(--rule);position:relative;}
@@ -80,7 +79,7 @@ img,svg{display:block;}
 .div-card li{font-size:0.85rem;color:var(--ink-light);line-height:1.6;padding:0.4rem 0;border-top:1px solid var(--rule);}
 .div-card li:first-child{border-top:none;}
 
-/* Platform cards grid (existing pattern) */
+/* Platforms */
 .h-svc{padding:clamp(4rem,8vw,6rem) 0;border-top:1px solid var(--rule);}
 .svc-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border:1px solid var(--rule);}
 .svc-card{padding:2rem 1.8rem;border-right:1px solid var(--rule);transition:background .2s;position:relative;}
@@ -96,7 +95,7 @@ img,svg{display:block;}
 .footer-cta h2{font-size:clamp(1.3rem,2.3vw,1.8rem);color:var(--cream);}
 .footer-cta p{color:var(--sage);margin-top:0.5rem;font-size:0.92rem;}
 
-/* PLATFORM PAGE — intake form */
+/* PLATFORM PAGE */
 .pf-hero{padding:clamp(3.5rem,7vw,5.5rem) 0 1.5rem;}
 .pf-kicker{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--moss);margin-bottom:1.1rem;}
 .pf-hero h1{font-size:clamp(1.6rem,3vw,2.3rem);color:var(--forest);margin-bottom:0.9rem;}
@@ -147,9 +146,9 @@ img,svg{display:block;}
 .bottom-cta{background:var(--forest);color:var(--cream);padding:clamp(3rem,6vw,4.5rem) 0;margin-top:1rem;}
 .bottom-cta-inner{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;}
 
-/* CONTACT (existing) */
+/* CONTACT PAGE */
 .cp{padding:clamp(3.5rem,7vw,5.5rem) 0;}
-.cp-inner{display:flex;flex-direction:column;gap:clamp(2rem,4vw,4rem);align-items:stretch;}
+.cp-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4rem);align-items:start;}
 .cp-left h1{font-size:clamp(1.7rem,2.8vw,2.3rem);color:var(--forest);margin-bottom:1.1rem;}
 .cp-left > p{font-size:0.95rem;color:var(--ink-light);line-height:1.7;margin-bottom:2.5rem;}
 .cp-details{display:flex;flex-direction:column;}
@@ -166,7 +165,6 @@ form{display:flex;flex-direction:column;gap:1.2rem;}
 .form-btn{background:var(--forest);color:var(--cream);padding:0.9rem;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:0.76rem;letter-spacing:0.04em;transition:opacity .18s;margin-top:0.2rem;}
 .form-btn:hover{opacity:.85;}
 .form-note{font-size:0.73rem;color:var(--ink-light);margin-top:-0.4rem;}
-.success-msg{display:none;background:var(--forest);color:var(--cream);padding:1rem;border-radius:2px;font-size:0.88rem;}
 
 footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
 .footer-top{display:grid;grid-template-columns:1fr auto;gap:2.5rem;padding-bottom:2.2rem;border-bottom:1px solid rgba(255,255,255,0.07);align-items:start;}
@@ -190,6 +188,7 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
   .pillar-list{grid-template-columns:1fr;}
   .pillar-item{border-right:none;border-bottom:1px solid var(--rule);}
   .pillar-item:last-child{border-bottom:none;}
+  .cp-inner{grid-template-columns:1fr;}
   .footer-top{grid-template-columns:1fr;}
   .nav-links{display:none;}
   .section-header{flex-wrap:wrap;gap:0.5rem;}
@@ -208,583 +207,7 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
 
 <!-- ══ NAV ══ -->
 <nav class="nav">
-  <div class="brand" onclick="goPage('home')" role="button" tabindex="0" aria-label="Phoenix CleanTech Group home" onkeypress="if(event.key==='Enter')goPage('home')">
+  <div class="brand" onclick="goPage('home')" role="button" tabindex="0" aria-label="Phoenix CleanTech Group home">
     <svg viewBox="8 2 68 88" fill="none" aria-hidden="true">
       <path d="M42 90 C18 76 8 56 8 40 C8 22 18 10 30 2 C28 14 32 22 38 28 C36 18 40 10 42 2 C44 10 48 18 46 28 C52 22 56 14 54 2 C66 10 76 22 76 40 C76 56 66 76 42 90 Z" fill="#1C3327"/>
-      <path d="M42 78 C28 66 22 52 22 40 C22 30 28 22 34 16 C33 24 36 30 40 34 C39 26 41 20 42 14 C43 20 45 26 44 34 C48 30 51 24 50 16 C56 22 62 30 62 40 C62 52 56 66 42 78 Z" fill="#C99A4A"/>
-      <path d="M42 64 C34 56 30 46 30 38 C30 32 34 26 38 22 C37 28 39 33 42 36 C45 33 47 28 46 22 C50 26 54 32 54 38 C54 46 50 56 42 64 Z" fill="#B95E33"/>
-    </svg>
-    <div class="brand-name"><span class="c1">Phoenix</span> CleanTech Group</div>
-  </div>
-  <div class="nav-links">
-    <button onclick="goPage('home')" data-page="home" class="active">Home</button>
-    <button onclick="goPage('platform')" data-page="platform">Platform &amp; Solutions</button>
-    <button onclick="goPage('capital')" data-page="capital">Phoenix Capital</button>
-    <button onclick="goPage('capital')" data-page="capital2">Phoenix CleanCloud</button>
-    <button onclick="goPage('contact')" data-page="contact">Contact</button>
-  </div>
-  <div class="nav-ctas">
-    <button class="nav-cta-secondary" onclick="goPage('contact')">Book a Technical Briefing</button>
-    <button class="nav-cta-primary" onclick="goPage('platform');setTimeout(()=>document.getElementById('intake-form-anchor').scrollIntoView({behavior:'smooth'}),80);">Submit Your Project</button>
-  </div>
-</nav>
-
-<!-- ══════════════════════════════════════
-     HOME
-══════════════════════════════════════ -->
-<div class="page active" id="page-home" role="main"><a id="main-content"></a>
-
-  <section class="h-hero">
-    <div class="wrap">
-      <div class="h-hero-body">
-        <div class="h-hero-left">
-          <div class="h-hero-kicker">Green Finance &amp; Energy Transition</div>
-          <h1 class="h-hero-h1">AI-powered platforms for Net Zero.</h1>
-        </div>
-        <div class="h-hero-right">
-          <p class="h-hero-desc" style="color:var(--gold-light);">For local authorities, housing associations, schools &amp; universities, and community energy organisations — reducing energy costs and the wider cost of living, from business case to commissioning.</p>
-          <div class="h-hero-btns">
-            <button class="btn-primary" onclick="goPage('platform');setTimeout(()=>document.getElementById('intake-form-anchor').scrollIntoView({behavior:'smooth'}),80);">Submit Your Project</button>
-            <button class="btn-secondary" onclick="goPage('contact')">Book a Technical Briefing</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="h-stats">
-      <div class="h-stat"><div class="h-stat-val">End-to-End</div><div class="h-stat-lab">Origination to delivery</div></div>
-      <div class="h-stat"><div class="h-stat-val">Solar · Wind · BESS · Climate Tech</div><div class="h-stat-lab">Technology coverage</div></div>
-      <div class="h-stat"><div class="h-stat-val">Public &amp; Education Sector</div><div class="h-stat-lab">Schools, universities &amp; estates</div></div>
-      <div class="h-stat"><div class="h-stat-val">Now Onboarding</div><div class="h-stat-lab">Phase 2 pilot intake</div></div>
-    </div>
-  </section>
-
-  <section class="h-divisions">
-    <div class="wrap">
-      <div class="section-header">
-        <h2>The Phoenix CleanTech ecosystem — three divisions</h2>
-        <div class="section-header-rule"></div>
-      </div>
-      <div class="div-grid">
-        <div class="div-card">
-          <div class="div-tag">B2B Ecosystem Engine</div>
-          <h3>Phoenix CleanTech Platform</h3>
-          <ul>
-            <li>"Submit Your Project" intake portal</li>
-            <li>Turnkey workflow tools for public sector, schools, and climate tech developers</li>
-            <li>Four subscription platforms — funding, financial modelling, procurement, VPP</li>
-          </ul>
-        </div>
-        <div class="div-card">
-          <div class="div-tag">Capital &amp; Investment QA</div>
-          <h3>Phoenix Capital</h3>
-          <ul>
-            <li>Bankability by Design — financial QA and ESG risk scoring for submitted projects</li>
-            <li>Public sector grant matching (PSDS, Salix, Scottish Government Net Zero funds)</li>
-            <li>Preference for public sector co-investment over pure private equity exits</li>
-          </ul>
-        </div>
-        <div class="div-card">
-          <div class="div-tag">Enterprise AI Gateway</div>
-          <h3>Phoenix CleanCloud</h3>
-          <ul>
-            <li>Unified API gateway for Claude, Llama, and specialised models</li>
-            <li>Model telemetry, token routing, and enterprise guardrail enforcement</li>
-            <li>Built on an active AWS Bedrock gateway engagement already underway</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="h-svc">
-    <div class="wrap">
-      <div class="section-header">
-        <h2>Four subscription platforms</h2>
-        <div class="section-header-rule"></div>
-      </div>
-      <div class="svc-cards">
-        <div class="svc-card">
-          <div class="svc-icon" aria-hidden="true">◈</div>
-          <div class="svc-tag">Phoenix Platform</div>
-          <h3>Campus &amp; public estate decarbonisation</h3>
-          <p>Purpose-built for school trusts, university estates directors, and local authorities — automated business cases, solar/BESS feasibility, BMS optimisation, and heat pump transition models.</p>
-        </div>
-        <div class="svc-card">
-          <div class="svc-icon" aria-hidden="true">◉</div>
-          <div class="svc-tag">Phoenix Platform</div>
-          <h3>Climate tech innovation engine</h3>
-          <p>Intake and development portal for clean mobility, smart grid tools, sustainable infrastructure, and energy efficiency ventures to build, launch, and scale.</p>
-        </div>
-        <div class="svc-card">
-          <div class="svc-icon" aria-hidden="true">◐</div>
-          <div class="svc-tag">Phoenix Capital</div>
-          <h3>Bankability &amp; co-investment engine</h3>
-          <p>Automated financial QA, ESG risk profiling, and Bankability by Design scoring to help unlock PSDS, Salix Finance, and co-investment funds for submitted projects.</p>
-        </div>
-        <div class="svc-card">
-          <div class="svc-icon" aria-hidden="true">◇</div>
-          <div class="svc-tag">Phoenix CleanCloud</div>
-          <h3>CleanCloud AI gateway</h3>
-          <p>Enterprise-grade model orchestration routing domain-specific AI models for climate risk simulation, building management systems, and regulatory compliance logic.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="footer-cta">
-    <div class="wrap">
-      <div class="footer-cta-inner">
-        <div>
-          <h2>Ready to accelerate your Net Zero project?</h2>
-          <p>Submit your project today for automated bankability scoring and public grant matching.</p>
-        </div>
-        <button class="btn-primary" onclick="goPage('platform');setTimeout(()=>document.getElementById('intake-form-anchor').scrollIntoView({behavior:'smooth'}),80);">Submit Your Project Now</button>
-      </div>
-    </div>
-  </section>
-
-</div>
-
-<!-- ══════════════════════════════════════
-     PLATFORM & SUBMIT YOUR PROJECT
-══════════════════════════════════════ -->
-<div class="page" id="page-platform">
-
-  <section class="pf-hero">
-    <div class="wrap">
-      <div class="pf-kicker">Platform &amp; Solutions</div>
-      <h1>From project intake to capital commissioning.</h1>
-      <p>Submit your climate initiative, campus decarbonisation project, or climate tech start-up to access AI workflows, technical feasibility tools, and public co-investment pipelines.</p>
-    </div>
-  </section>
-
-  <section class="intake-wrap">
-    <div class="wrap">
-      <a id="intake-form-anchor"></a>
-      <div class="intake-box">
-        <div class="intake-title">Project Intake &amp; Evaluation Portal</div>
-        <form class="intake-form" id="intakeForm" onsubmit="handleIntakeSubmit(event)">
-          <div class="intake-field">
-            <label>1. Organisation Type</label>
-            <select required>
-              <option value="">Select organisation type</option>
-              <option>School / University / Educational Trust</option>
-              <option>Local Authority</option>
-              <option>Housing Association</option>
-              <option>Community Energy Group</option>
-              <option>Climate Tech Developer / Start-up</option>
-            </select>
-          </div>
-          <div class="intake-field">
-            <label>2. Technology Category</label>
-            <select required>
-              <option value="">Select technology focus</option>
-              <option>Solar PV &amp; Battery Storage (BESS)</option>
-              <option>Wind Energy</option>
-              <option>Heat Pumps / BMS</option>
-              <option>Campus Microgrid</option>
-              <option>Climate Tech / Greentech Innovation</option>
-            </select>
-          </div>
-          <div class="intake-field">
-            <label>3. Target Funding Pipeline</label>
-            <select required>
-              <option value="">Select primary capital need</option>
-              <option>Public Sector Grant (PSDS, Salix, Scottish Government)</option>
-              <option>Private Co-Investment</option>
-              <option>Debt Financing</option>
-              <option>Self-Funded</option>
-            </select>
-          </div>
-          <div class="intake-field">
-            <label>4. Project Details</label>
-            <input type="text" placeholder="Brief description, estimated capex, or site specs">
-          </div>
-          <div class="intake-field">
-            <label>Contact Email</label>
-            <input type="email" required placeholder="you@organisation.org">
-          </div>
-          <button type="submit" class="intake-submit">Submit for Assessment &amp; Grant Matching</button>
-          <p class="intake-note">This form is a demo — connect it to your inbox or CRM before going live.</p>
-          <div class="intake-success" id="intakeSuccess">Thanks — this is a demo form, nothing was submitted yet.</div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding:clamp(2rem,4vw,3rem) 0 clamp(4rem,8vw,6rem);">
-    <div class="wrap">
-      <div class="section-header">
-        <h2>Sector-specific solutions</h2>
-        <div class="section-header-rule"></div>
-      </div>
-      <div class="sector-grid">
-        <div class="sector-card">
-          <h3>For Schools &amp; Universities</h3>
-          <div class="sector-item">
-            <h4>Campus Net Zero</h4>
-            <p>Automated business cases for school trusts and university estates.</p>
-          </div>
-          <div class="sector-item">
-            <h4>Grant Readiness</h4>
-            <p>Output formatted for Public Sector Decarbonisation Scheme (PSDS) and Salix funding applications.</p>
-          </div>
-          <div class="sector-item">
-            <h4>Cost Reduction</h4>
-            <p>Direct reduction of campus heating and electricity bills through peak-shaving BESS and solar PV.</p>
-          </div>
-        </div>
-        <div class="sector-card">
-          <h3>For Climate Tech &amp; Greentech Innovators</h3>
-          <div class="sector-item">
-            <h4>Fast-Track Onboarding</h4>
-            <p>Intake for clean mobility, smart grid, and carbon tech start-ups.</p>
-          </div>
-          <div class="sector-item">
-            <h4>Platform Integration</h4>
-            <p>Connect your own software tools directly to the Phoenix CleanTech ecosystem.</p>
-          </div>
-          <div class="sector-item">
-            <h4>Venture Scaling</h4>
-            <p>Access Phoenix Capital's deal-structuring and public co-investment matching.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</div>
-
-<!-- ══════════════════════════════════════
-     PHOENIX CAPITAL & CLEANCLOUD
-══════════════════════════════════════ -->
-<div class="page" id="page-capital">
-
-  <section class="cc-hero">
-    <div class="wrap">
-      <div class="pf-kicker">Phoenix Capital &amp; Phoenix CleanCloud</div>
-      <h1>Institutional capital matching &amp; enterprise AI infrastructure.</h1>
-      <p>Bridging the gap between climate projects, public grants, and high-performance AI model orchestration.</p>
-    </div>
-  </section>
-
-  <section class="pillar" style="border-top:none;">
-    <div class="wrap">
-      <div class="pillar-label">Pillar 01</div>
-      <h2>Phoenix Capital</h2>
-      <p style="font-size:0.95rem;color:var(--ink-mid);line-height:1.7;max-width:74ch;">Phoenix Capital assesses submitted projects for financial and ESG bankability, then matches them to the most appropriate funding route — with a stated preference for public sector co-investment over pure private equity exit structures.</p>
-
-      <div class="flow-strip">
-        <span class="flow-step">Submitted Project</span>
-        <span class="flow-arrow">→</span>
-        <span class="flow-step">Bankability &amp; ESG Assessment</span>
-        <span class="flow-arrow">→</span>
-        <span class="flow-step">Public / Private Co-Investment</span>
-      </div>
-
-      <div class="pillar-list">
-        <div class="pillar-item">
-          <h4>Bankability by Design</h4>
-          <p>Evaluates campus decarbonisation and climate tech assets with financial QA, ESG indexing, and climate risk profiling.</p>
-        </div>
-        <div class="pillar-item">
-          <h4>Public Sector Grant Matching</h4>
-          <p>Routes qualifying projects toward PSDS, Salix Finance, and Scottish Government Net Zero funding streams.</p>
-        </div>
-        <div class="pillar-item">
-          <h4>Funding Deployment</h4>
-          <p>Prepares bankable investment cases for Scottish Enterprise, the UK Infrastructure Bank, and co-investment funds.</p>
-        </div>
-      </div>
-
-      <p class="cc-note">Phoenix Capital's scoring methodology and academic/research partnerships are in development. Any claimed third-party or university affiliation will be named here once formally confirmed — not before.</p>
-    </div>
-  </section>
-
-  <section class="pillar">
-    <div class="wrap">
-      <div class="pillar-label">Pillar 02</div>
-      <h2>Phoenix CleanCloud</h2>
-      <p style="font-size:0.95rem;color:var(--ink-mid);line-height:1.7;max-width:74ch;">An enterprise AI gateway built on an active AWS Bedrock infrastructure engagement — giving organisations unified, governed access to leading AI models without managing multiple provider relationships directly.</p>
-
-      <div class="pillar-list">
-        <div class="pillar-item">
-          <h4>Universal API Gateway</h4>
-          <p>Routes access to Anthropic Claude, Meta Llama, and specialised models tailored for energy modelling and climate analytics.</p>
-        </div>
-        <div class="pillar-item">
-          <h4>Enterprise Control &amp; Guardrails</h4>
-          <p>Token routing, usage telemetry, and delegated security guardrails for high-scale enterprise workloads.</p>
-        </div>
-        <div class="pillar-item">
-          <h4>Domain AI Micro-Models</h4>
-          <p>Optimised endpoints for building management system telemetry, regulatory compliance, and climate adaptation simulations.</p>
-        </div>
-      </div>
-
-      <p class="cc-note">CleanCloud's gateway infrastructure is being built on our existing AWS Bedrock engagement — current scope covers Anthropic model access, with multi-provider routing (Llama and others) as a planned extension, not yet live.</p>
-    </div>
-  </section>
-
-  <section class="bottom-cta">
-    <div class="wrap">
-      <div class="bottom-cta-inner">
-        <button class="btn-primary" onclick="goPage('contact')">Partner with Phoenix Capital</button>
-        <button class="btn-secondary" onclick="goPage('contact')">Access CleanCloud AI API</button>
-      </div>
-    </div>
-  </section>
-
-</div>
-
-<!-- ══════════════════════════════════════
-     CONTACT
-══════════════════════════════════════ -->
-<div class="page" id="page-contact">
-  <section class="cp">
-    <div class="wrap">
-      <div class="cp-inner">
-        <div class="cp-left">
-          <div class="cp-kicker">Contact</div>
-          <h1>Let's talk about your project</h1>
-          <p>Whether it's an early-stage idea or a programme already in motion, an introductory conversation costs nothing and usually clarifies the next step quickly.</p>
-          <div class="cp-details">
-            <div class="cp-detail"><div class="cp-detail-label">Email</div><div class="cp-detail-val">hello@phoenixcleantech.com</div></div>
-            <div class="cp-detail"><div class="cp-detail-label">Coverage</div><div class="cp-detail-val">UK-wide, with international projects considered</div></div>
-            <div class="cp-detail"><div class="cp-detail-label">Legal</div><div class="cp-detail-val"><a onclick="goPage('privacy')" href="javascript:void(0)" style="color:var(--clay);text-decoration:underline;cursor:pointer;">Privacy Policy</a> · <a onclick="goPage('terms')" href="javascript:void(0)" style="color:var(--clay);text-decoration:underline;cursor:pointer;">Terms &amp; Conditions</a></div></div>
-          </div>
-        </div>
-        <div class="cp-form-wrap">
-          <form id="contactForm" onsubmit="handleSubmit(event)">
-            <div class="field"><label>Name</label><input type="text" required></div>
-            <div class="field"><label>Organisation</label><input type="text"></div>
-            <div class="field"><label>Email</label><input type="email" required></div>
-            <div class="field">
-              <label>What's this about</label>
-              <select>
-                <option>Phoenix CleanTech Platform</option>
-                <option>Phoenix Capital</option>
-                <option>Phoenix CleanCloud</option>
-                <option>Something else</option>
-              </select>
-            </div>
-            <div class="field"><label>Message</label><textarea required></textarea></div>
-
-            <div style="display:flex;align-items:flex-start;gap:0.6rem;margin:0.4rem 0 1rem;">
-              <input type="checkbox" id="marketingConsent" style="margin-top:0.3rem;width:16px;height:16px;accent-color:var(--clay);flex-shrink:0;">
-              <label for="marketingConsent" style="font-size:0.85rem;color:var(--ink-mid);font-weight:400;text-transform:none;letter-spacing:normal;cursor:pointer;">I'd like to receive occasional updates from Phoenix CleanTech Group about new platforms and services.</label>
-            </div>
-
-            <p style="font-size:0.78rem;color:var(--ink-mid);line-height:1.6;margin-bottom:1rem;">By submitting this form, you consent to Phoenix CleanTech Group processing the information above to respond to your enquiry. See our <a onclick="goPage('privacy')" href="javascript:void(0)" style="color:var(--clay);text-decoration:underline;cursor:pointer;">Privacy Policy</a>. You can unsubscribe from optional updates at any time.</p>
-
-            <button type="submit" class="form-btn">Send message</button>
-            <p class="form-note">Connect this form to Formspree or your inbox before going live.</p>
-            <div class="success-msg" id="successMsg">Thanks — this is a demo form, nothing was sent yet.</div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ══ PRIVACY POLICY ══ -->
-<div class="page" id="page-privacy">
-  <section class="pp">
-    <div class="wrap" style="max-width:820px;">
-      <div class="cp-kicker" style="margin-top:2.5rem;">Legal</div>
-      <h1 style="font-size:clamp(1.6rem,3vw,2.2rem);color:var(--forest);margin-bottom:0.5rem;">Privacy Policy</h1>
-      <p style="color:var(--ink-mid);font-size:0.9rem;margin-bottom:2.5rem;">Effective date: July 2026</p>
-      <div style="font-size:0.95rem;line-height:1.75;color:var(--ink-mid);">
-
-      <p style="margin-bottom:1.5rem;">Phoenix CleanTech Ltd, trading as Phoenix CleanTech Group ("us", "we", or "our"), is a company registered in Scotland. This page informs you of our policies regarding the collection, use and disclosure of Personal Data when you use our website (the "Service") and the choices you have associated with that data. This policy applies across the Phoenix CleanTech Group's divisions, including Phoenix CleanTech Platform, Phoenix Capital, and Phoenix CleanCloud.</p>
-
-      <p style="margin-bottom:2rem;">This Privacy Policy is not intended to apply to anyone under the age of 16. If you are a parent or guardian and are aware that your child has provided us with Personal Data, please contact us so we can remove it.</p>
-
-      <h2 style="font-family:'Lora',serif;font-size:1.2rem;color:var(--forest);margin:2rem 0 0.8rem;">Introduction</h2>
-      <p style="margin-bottom:1.5rem;">We use your data to provide and improve the Service. Unless otherwise defined in this Privacy Policy, terms used here have the same meanings as in our Terms and Conditions.</p>
-
-      <h2 style="font-family:'Lora',serif;font-size:1.2rem;color:var(--forest);margin:2rem 0 0.8rem;">Definitions</h2>
-      <p style="margin-bottom:1.5rem;">In the course of using our Service, we collect information about you ("Personal Data") and the way you use the Service ("Usage Data"). We may also store small pieces of data on your device to record your preferences ("Cookies").</p>
-      <p style="margin-bottom:1.5rem;">We determine the purposes for which your Personal Data is collected and processed. Under data protection law this makes us a "Data Controller". Where we work with third parties to process your Personal Data on our behalf, those parties are "Data Processors" or "Service Providers". As we collect your Personal Data, you are a "Data Subject" under data protection law. We may also refer to you as a "User" of the Service.</p>
-
-      <h2 style="font-family:'Lora',serif;font-size:1.2rem;color:var(--forest);margin:2rem 0 0.8rem;">Service Providers</h2>
-      <p style="margin-bottom:1.5rem;">Where we employ Service Providers, your Personal Data is shared only for specific and limited agreed purposes, subject to a suitable data processing agreement covering permitted uses, technical and organisational security requirements, duration of processing, and procedures for return or deletion of Personal Data on termination.</p>
-
-      <h2 style="font-family:'Lora',serif;font-size:1.2rem;color:var(--forest);margin:2rem 0 0.8rem;">Analytics</h2>
-      <p style="margin-bottom:1.5rem;">We may use third-party Service Providers, such as Google Analytics, to monitor and analyse use of our Service. This data may be used to contextualise and personalise advertising, and is shared with other Google services. You can opt out using the Google Analytics opt-out browser add-on. For more on Google's privacy practices, see <a href="https://policies.google.com/privacy" style="color:var(--clay);">policies.google.com/privacy</a>.</p>
-
-      <h2 style="font-family:'Lora',serif;font-size:1.2rem;color:var(--forest);margin:2rem 0 0.8rem;">Use of Data</h2>
-      <p style="margin-bottom:0.8rem;">Phoenix CleanTech Group uses collected data for the following purposes:</p>
-      <ul style="margin:0 0 1.5rem 1.4rem;">
-        <li>To provide and maintain our Service</li>
-        <li>To notify you about changes to our Service</li>
-        <li>To allow you to participate in interactive features when you choose to do so</li>
-        <li>To provide customer support</li>
-        <li>To gather analysis so we can improve our Service</li>
-        <li>To monitor usage and detect, prevent and address technical issues</li>
-        <li>To provide news, updates or information about services similar to those you have enquired about, unless you have opted out</li>
-      </ul>
-
-      <h2 style="font-family:'Lora',serif;font-size:1.2rem;color:var(--forest);margin:2rem 0 0.8rem;">Types of Data Collected</h2>
-      <p style="margin-bottom:0.5rem;"><strong>Personal Data</strong> — while using our Service we may ask you to provide Personal Data including, but not limited to: email address, first and last name, and Cookies and Usage Data.</p>
-      <p style="margin-bottom:1.5rem;"><strong>Usage Data</strong> — we may collect information on how the Service is accessed, including your IP address, browser type and version, pages visited, time and date of visit, time spent on those pages, and other diagnostic data.</p>
-
-      <h2 style="font-family:'Lora',serif;font-size:1.2rem;color:var(--forest);margin:2rem 0 0.8rem;">Tracking &amp; Cookies</h2>
-      <p style="margin-bottom:1.5rem;">We use cookies and similar tracking technologies to track activity on our Service. Cookies are files with a small amount of data, which may include an anonymous unique identifier. You can instruct your browser to refuse all cookies, though this may affect your ability to use parts of the Service. We use Session Cookies to operate the Service, Preference Cookies to remember your settings, and Security Cookies for security purposes.</p>
-
-      <h2 style="font-family:'Lora',serif;font-size:1.2rem;color:var(--forest);margin:2rem 0 0.8rem;">Legal Basis for Processing (UK GDPR)</h2>
-      <p style="margin-bottom:0.8rem;">We process your Personal Data because:</p>
-      <ul style="margin:0 0 1.5rem 1.4rem;">
-        <li>We need to perform a contract with you</li>
-        <li>You have given us permission to do so</li>
-        <li>The processing is in our legitimate interests and is not overridden by your rights</li>
-        <li>We need to comply with the law</li>
-      </ul>
-
-      <h2 style="font-family:'Lora',serif;font-size:1.2rem;color:var(--forest);margin:2rem 0 0.8rem;">Retention of Data</h2>
-      <p style="margin-bottom:1.5rem;">We retain your Personal Data only for as long as necessary for the purposes set out in this Privacy Policy and in accordance with applicable law. Usage Data is generally retained for a shorter period, except where needed to strengthen security, improve functionality, or comply with a legal obligation.</p>
-
-      <h2 style="font-family:'Lora',serif;font-size:1.2rem;color:var(--forest);margin:2rem 0 0.8rem;">Transfer of Data</h2>
-      <p style="margin-bottom:1.5rem;">Your information may be transferred to, and maintained on, computers located outside your jurisdiction where data protection laws may differ. Where this happens, we require appropriate safeguards — such as UK-approved standard contractual clauses — to ensure your Personal Data remains protected in accordance with UK GDPR.</p>
-
-      <h2 style="font-family:'Lora',serif;font-size:1.2rem;color:var(--forest);margin:2rem 0 0.8rem;">Security of Data</h2>
-      <p style="margin-bottom:1.5rem;">The security of your data matters to us, but no method of transmission over the internet or electronic storage is 100% secure. We use commercially reasonable measures to protect your Personal Data and limit access to those with a genuine business need to know.</p>
-
-      <h2 style="font-family:'Lora',serif;font-size:1.2rem;color:var(--forest);margin:2rem 0 0.8rem;">Your Rights Under UK GDPR</h2>
-      <p style="margin-bottom:0.8rem;">You have the right to:</p>
-      <ul style="margin:0 0 1.5rem 1.4rem;">
-        <li>Access, update, or request deletion of the Personal Data we hold on you</li>
-        <li>Rectification of inaccurate or incomplete Personal Data</li>
-        <li>Object to our processing of your Personal Data</li>
-        <li>Request restriction of processing of your Personal Data</li>
-        <li>Receive a copy of your Personal Data in a structured, machine-readable format</li>
-        <li>Withdraw consent at any time where we relied on it to process your data</li>
-      </ul>
-      <p style="margin-bottom:1.5rem;">We may ask you to verify your identity before responding to such requests. If you believe your Personal Data is not being processed in line with this policy, please contact us. If you remain unsatisfied, you have the right to lodge a complaint with the Information Commissioner's Office at <a href="https://ico.org.uk/concerns" style="color:var(--clay);">ico.org.uk/concerns</a>.</p>
-
-      <h2 style="font-family:'Lora',serif;font-size:1.2rem;color:var(--forest);margin:2rem 0 0.8rem;">Links to Other Sites</h2>
-      <p style="margin-bottom:1.5rem;">Our Service may contain links to third-party sites not operated by us. We strongly advise you to review the Privacy Policy of every site you visit. We have no control over, and assume no responsibility for, the content or privacy practices of third-party sites.</p>
-
-      <h2 style="font-family:'Lora',serif;font-size:1.2rem;color:var(--forest);margin:2rem 0 0.8rem;">Changes to This Privacy Policy</h2>
-      <p style="margin-bottom:1.5rem;">We may update this Privacy Policy from time to time. We will post any new version on this page and, where changes are substantial, notify you by email or a prominent notice on our Service.</p>
-
-      <h2 style="font-family:'Lora',serif;font-size:1.2rem;color:var(--forest);margin:2rem 0 0.8rem;">Contact Us</h2>
-      <p style="margin-bottom:3rem;">If you have any questions about this Privacy Policy, please contact us at <a href="mailto:hello@phoenixcleantech.com" style="color:var(--clay);">hello@phoenixcleantech.com</a>.</p>
-
-      </div>
-      <button class="btn-secondary" onclick="goPage('contact')" style="margin-bottom:3rem;background:var(--forest);">← Back to Contact</button>
-    </div>
-  </section>
-</div>
-
-<!-- ══ TERMS & CONDITIONS ══ -->
-<div class="page" id="page-terms">
-  <section class="pp">
-    <div class="wrap" style="max-width:820px;">
-      <div class="cp-kicker" style="margin-top:2.5rem;">Legal</div>
-      <h1 style="font-size:clamp(1.6rem,3vw,2.2rem);color:var(--forest);margin-bottom:0.5rem;">Terms &amp; Conditions</h1>
-      <p style="color:var(--ink-mid);font-size:0.9rem;margin-bottom:2.5rem;">Effective date: July 2026</p>
-      <div style="font-size:0.95rem;line-height:1.75;color:var(--ink-mid);">
-
-      <p style="margin-bottom:1.5rem;">These Terms and Conditions ("Terms") govern use of this website (the "Service"), operated by Phoenix CleanTech Ltd, trading as Phoenix CleanTech Group ("us", "we", or "our"), a company registered in Scotland. By accessing or using the Service, you agree to be bound by these Terms. Terms used here have the same meaning as in our <a href="javascript:void(0)" onclick="goPage('privacy')" style="color:var(--clay);">Privacy Policy</a>.</p>
-
-      <h2 style="font-family:'Lora',serif;font-size:1.2rem;color:var(--forest);margin:2rem 0 0.8rem;">Use of the Service</h2>
-      <p style="margin-bottom:1.5rem;">This website is provided for general information about Phoenix CleanTech Group's divisions, services and platforms. You may use the Service only for lawful purposes and in a way that does not infringe the rights of, or restrict or inhibit the use and enjoyment of the Service by, any third party.</p>
-
-      <h2 style="font-family:'Lora',serif;font-size:1.2rem;color:var(--forest);margin:2rem 0 0.8rem;">No Reliance on Website Content</h2>
-      <p style="margin-bottom:1.5rem;">Content on this website, including descriptions of platforms, capital/investment matching, and AI gateway services, is provided for general informational purposes only and does not constitute a contractual offer, financial advice, investment advice, or a guarantee of specific outcomes, funding, or capital. Any engagement for services is subject to a separate, signed agreement between Phoenix CleanTech Ltd (or the relevant Phoenix CleanTech Group division) and the client, which takes precedence over any description on this website.</p>
-
-      <h2 style="font-family:'Lora',serif;font-size:1.2rem;color:var(--forest);margin:2rem 0 0.8rem;">Intellectual Property</h2>
-      <p style="margin-bottom:1.5rem;">Unless otherwise stated, Phoenix CleanTech Ltd owns the intellectual property rights in the design, text, and content of this website. You may view and print pages for your own personal, non-commercial use, but may not reproduce, republish, or distribute content from this site without our prior written consent.</p>
-
-      <h2 style="font-family:'Lora',serif;font-size:1.2rem;color:var(--forest);margin:2rem 0 0.8rem;">No Warranty</h2>
-      <p style="margin-bottom:1.5rem;">The Service is provided "as is". While we take reasonable care to keep information on this website accurate and up to date, we make no warranties or representations, express or implied, about the completeness, accuracy, or reliability of the Service or its content.</p>
-
-      <h2 style="font-family:'Lora',serif;font-size:1.2rem;color:var(--forest);margin:2rem 0 0.8rem;">Limitation of Liability</h2>
-      <p style="margin-bottom:1.5rem;">To the fullest extent permitted by law, Phoenix CleanTech Ltd shall not be liable for any indirect, incidental, or consequential loss or damage arising from your use of, or inability to use, this website. Nothing in these Terms excludes or limits liability for death or personal injury caused by negligence, or for fraud, or any other liability that cannot be excluded or limited under applicable law.</p>
-
-      <h2 style="font-family:'Lora',serif;font-size:1.2rem;color:var(--forest);margin:2rem 0 0.8rem;">Third-Party Links</h2>
-      <p style="margin-bottom:1.5rem;">This website may contain links to third-party websites. We have no control over, and accept no responsibility for, the content or practices of any linked third-party site.</p>
-
-      <h2 style="font-family:'Lora',serif;font-size:1.2rem;color:var(--forest);margin:2rem 0 0.8rem;">Governing Law</h2>
-      <p style="margin-bottom:1.5rem;">These Terms are governed by and construed in accordance with the law of Scotland, and the courts of Scotland shall have exclusive jurisdiction over any dispute arising from these Terms or your use of the Service.</p>
-
-      <h2 style="font-family:'Lora',serif;font-size:1.2rem;color:var(--forest);margin:2rem 0 0.8rem;">Changes to These Terms</h2>
-      <p style="margin-bottom:1.5rem;">We may update these Terms from time to time. We will post any new version on this page and, where changes are substantial, notify you by a prominent notice on the Service.</p>
-
-      <h2 style="font-family:'Lora',serif;font-size:1.2rem;color:var(--forest);margin:2rem 0 0.8rem;">Contact Us</h2>
-      <p style="margin-bottom:3rem;">If you have any questions about these Terms, please contact us at <a href="mailto:hello@phoenixcleantech.com" style="color:var(--clay);">hello@phoenixcleantech.com</a>.</p>
-
-      </div>
-      <button class="btn-secondary" onclick="goPage('contact')" style="margin-bottom:3rem;background:var(--forest);">← Back to Contact</button>
-    </div>
-  </section>
-</div>
-
-<!-- ══ FOOTER ══ -->
-<footer>
-  <div class="wrap">
-    <div class="footer-top">
-      <div>
-        <div class="footer-brand-name">Phoenix CleanTech Group</div>
-        <div class="footer-tagline">Platform · Capital · CleanCloud</div>
-      </div>
-      <div class="footer-cols">
-        <div class="fc">
-          <div class="fc-title">Divisions</div>
-          <a onclick="goPage('platform')" href="javascript:void(0)">Phoenix CleanTech Platform</a>
-          <a onclick="goPage('capital')" href="javascript:void(0)">Phoenix Capital</a>
-          <a onclick="goPage('capital')" href="javascript:void(0)">Phoenix CleanCloud</a>
-        </div>
-        <div class="fc">
-          <div class="fc-title">Contact</div>
-          <a href="mailto:hello@phoenixcleantech.com">hello@phoenixcleantech.com</a>
-          <a onclick="goPage('privacy')" href="javascript:void(0)">Privacy Policy</a>
-          <a onclick="goPage('terms')" href="javascript:void(0)">Terms &amp; Conditions</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Phoenix CleanTech Ltd, trading as Phoenix CleanTech Group. Registered in Scotland, Company No. SC894315. Also provides AWS cloud and AI infrastructure services.</span>
-      <span>Platform · Capital · CleanCloud</span>
-    </div>
-  </div>
-</footer>
-
-<!-- ══ COOKIE CONSENT ══ -->
-<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--forest);color:var(--cream);padding:1.2rem clamp(1.25rem,4vw,3rem);box-shadow:0 -4px 20px rgba(0,0,0,0.15);">
-  <div style="max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;">
-    <p style="margin:0;font-size:0.85rem;line-height:1.6;color:rgba(247,243,235,0.85);max-width:60ch;">We use essential cookies to run this site, and optional analytics cookies to understand how it's used. Optional cookies are only set if you accept. See our <a href="javascript:void(0)" onclick="goPage('privacy')" style="color:#C99A4A;text-decoration:underline;">Privacy Policy</a> for details.</p>
-    <div style="display:flex;gap:0.7rem;flex-shrink:0;">
-      <button onclick="setCookieConsent(false)" style="background:transparent;border:1px solid rgba(247,243,235,0.4);color:#F7F3EB;padding:0.6rem 1.1rem;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;cursor:pointer;">Accept essential only</button>
-      <button onclick="setCookieConsent(true)" style="background:#A8521E;border:none;color:#F7F3EB;padding:0.6rem 1.1rem;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;cursor:pointer;">Accept all</button>
-    </div>
-  </div>
-</div>
-
-<script>
-function goPage(n){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.getElementById('page-'+n).classList.add('active');
-  document.querySelectorAll('.nav-links button').forEach(b=>b.classList.toggle('active',b.dataset.page===n));
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-function handleSubmit(e){
-  e.preventDefault();
-  document.getElementById('successMsg').style.display='block';
-}
-function handleIntakeSubmit(e){
-  e.preventDefault();
-  document.getElementById('intakeSuccess').style.display='block';
-}
-function setCookieConsent(accepted){
-  localStorage.setItem('cookieConsent', accepted ? 'accepted' : 'rejected');
-  document.getElementById('cookieBanner').style.display='none';
-}
-(function(){
-  var consent = localStorage.getItem('cookieConsent');
-  if(!consent){ document.getElementById('cookieBanner').style.display='block'; }
-})();
-</script>
-</body>
-</html>
+      <path d="M42 78 C28 6
