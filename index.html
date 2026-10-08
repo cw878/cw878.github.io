@@ -22,7 +22,7 @@ a{color:inherit;text-decoration:none;}
 button,.btn{cursor:pointer;font-family:inherit;border:none;display:inline-block;text-align:center;}
 img,svg{display:block;}
 
-/* GLOBAL LAYOUT WRAPPER - UNIFIED MARGINS & PADDING */
+/* GLOBAL LAYOUT WRAPPER */
 .wrap{max-width:1160px;margin:0 auto;padding:0 clamp(1.25rem, 4vw, 3.5rem);}
 
 /* NAV */
@@ -58,7 +58,7 @@ img,svg{display:block;}
 .btn-secondary{background:transparent;color:var(--cream);border:1px solid rgba(255,255,255,0.25);padding:0.85rem 1.5rem;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:0.76rem;letter-spacing:0.04em;transition:border-color .18s;}
 .btn-secondary:hover{border-color:rgba(255,255,255,0.55);}
 
-/* HERO STATS BAR — ALIGNED EXACTLY WITH CONTENT WRAPPER */
+/* HERO STATS BAR */
 .h-stats-outer{border-top:1px solid rgba(255,255,255,0.15);border-bottom:1px solid rgba(255,255,255,0.15);width:100%;}
 .h-stats{display:grid;grid-template-columns:repeat(4,1fr);width:100%;}
 .h-stat{padding:1.4rem 1.6rem 1.4rem 0;border-right:1px solid rgba(255,255,255,0.08);}
@@ -86,6 +86,7 @@ img,svg{display:block;}
 
 /* PLATFORMS */
 .h-svc{padding:clamp(4rem,8vw,6rem) 0;border-top:1px solid var(--rule);}
+.svc-intro{font-size:0.95rem;color:var(--ink-mid);line-height:1.7;margin-bottom:2rem;max-width:76ch;}
 .svc-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border:1px solid var(--rule);}
 .svc-card{padding:2rem 1.8rem;border-right:1px solid var(--rule);transition:background .2s;position:relative;}
 .svc-card:last-child{border-right:none;}
@@ -94,6 +95,7 @@ img,svg{display:block;}
 .svc-tag{font-family:'IBM Plex Mono',monospace;font-size:0.62rem;color:var(--clay);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.6rem;}
 .svc-card h3{font-size:1.02rem;margin-bottom:0.6rem;color:var(--forest);line-height:1.3;}
 .svc-card p{font-size:0.85rem;color:var(--ink-light);line-height:1.65;}
+.svc-footnote{font-size:0.88rem;color:var(--ink-mid);line-height:1.65;margin-top:2rem;padding:1.2rem 1.5rem;background:var(--cream-dark);border:1px solid var(--rule);border-radius:2px;}
 
 .footer-cta{background:var(--forest);color:var(--cream);padding:clamp(3rem,6vw,4.5rem) 0;}
 .footer-cta-inner{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;}
@@ -242,13 +244,13 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
       </div>
     </div>
     
-    <!-- STATS BAR ALIGNED PERFECTLY -->
+    <!-- STATS BAR -->
     <div class="h-stats-outer">
       <div class="wrap">
         <div class="h-stats">
-          <div class="h-stat"><div class="h-stat-val">End-to-End</div><div class="h-stat-lab">Origination to delivery</div></div>
           <div class="h-stat"><div class="h-stat-val">Solar · Wind · BESS · Climate Tech Innovation</div><div class="h-stat-lab">Technology coverage</div></div>
           <div class="h-stat"><div class="h-stat-val">Public &amp; Education Sector</div><div class="h-stat-lab">Schools, universities &amp; estates</div></div>
+          <div class="h-stat"><div class="h-stat-val">End-to-End</div><div class="h-stat-lab">Origination to delivery</div></div>
           <div class="h-stat"><div class="h-stat-val">Now Onboarding</div><div class="h-stat-lab">Phase 2 pilot intake</div></div>
         </div>
       </div>
@@ -268,14 +270,14 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
           <ul>
             <li>"Submit Your Project" intake portal</li>
             <li>Turnkey workflow tools for public sector, schools, and climate tech developers</li>
-            <li>Subscription modules for campus decarbonisation &amp; climate innovation</li>
+            <li>Four core platforms connected by a single shared data layer</li>
           </ul>
         </div>
         <div class="div-card">
           <div class="div-tag">Capital &amp; Investment QA</div>
           <h3>Phoenix CleanTech Capital</h3>
           <ul>
-            <li>Bankability by Design — financial QA and ESG risk scoring via embedded ClimStudio</li>
+            <li>Bankability by Design — financial QA and ESG risk scoring for submitted projects</li>
             <li>Public sector grant matching (PSDS, Salix, Scottish Government Net Zero funds)</li>
             <li>Co-investment matching for green infrastructure &amp; portfolio ventures</li>
           </ul>
@@ -285,7 +287,7 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
           <h3>Phoenix CleanTech Cloud</h3>
           <ul>
             <li>Enterprise AI gateway powered by AWS for unified, governed LLM routing</li>
-            <li>Multi-model orchestration for Anthropic Claude, Meta Llama, and domain micro-models</li>
+            <li>Enterprise orchestration delivering secure access to leading frontier models (including Anthropic Claude via Amazon Bedrock) with multi-model routing and domain-specific LLM integration on our active product roadmap.</li>
             <li>Model telemetry, token usage arbitrage, and delegated security guardrails</li>
           </ul>
         </div>
@@ -296,34 +298,38 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
   <section class="h-svc">
     <div class="wrap">
       <div class="section-header">
-        <h2>Four subscription platforms</h2>
+        <h2>Four Core Platforms</h2>
         <div class="section-header-rule"></div>
       </div>
+      <p class="svc-intro">Phoenix CleanTech's offer centres on four core platforms, connected by a single shared data layer, plus an AI &amp; Data extension layer:</p>
       <div class="svc-cards">
         <div class="svc-card">
           <div class="svc-icon" aria-hidden="true">◈</div>
-          <div class="svc-tag">Phoenix CleanTech Platform</div>
-          <h3>Campus &amp; public estate decarbonisation</h3>
-          <p>Purpose-built for school trusts, university estates directors, and local authorities — automated business cases, solar/BESS feasibility, BMS optimisation, and heat pump transition models.</p>
+          <div class="svc-tag">Phoenix Platform</div>
+          <h3>Funding &amp; Grant Application Platform</h3>
+          <p>Structured, AI-assisted preparation and submission of funding applications.</p>
         </div>
         <div class="svc-card">
           <div class="svc-icon" aria-hidden="true">◉</div>
-          <div class="svc-tag">Phoenix CleanTech Platform</div>
-          <h3>Climate tech innovation engine</h3>
-          <p>Intake and development portal for clean mobility, smart grid tools, sustainable infrastructure, and energy efficiency ventures to build, launch, and scale.</p>
+          <div class="svc-tag">Phoenix Platform</div>
+          <h3>Automated Financial Modelling Platform</h3>
+          <p>Ingests project data directly from a client's data room to generate investment-grade financial performance outputs.</p>
         </div>
         <div class="svc-card">
           <div class="svc-icon" aria-hidden="true">◐</div>
-          <div class="svc-tag">Phoenix CleanTech Capital</div>
-          <h3>Bankability &amp; co-investment engine</h3>
-          <p>Automated financial QA, ESG risk profiling, and Bankability by Design scoring powered by ClimStudio to help unlock PSDS, Salix Finance, and co-investment funds for submitted projects.</p>
+          <div class="svc-tag">Phoenix Platform</div>
+          <h3>Procurement &amp; Supplier Bidding Platform</h3>
+          <p>Connects to a supplier portal for tender invitation and bid management.</p>
         </div>
         <div class="svc-card">
           <div class="svc-icon" aria-hidden="true">◇</div>
-          <div class="svc-tag">Phoenix CleanTech Cloud</div>
-          <h3>CleanCloud AI gateway</h3>
-          <p>Enterprise-grade model orchestration routing domain-specific AI models for climate risk simulation, building management systems, and regulatory compliance logic.</p>
+          <div class="svc-tag">Phoenix Platform</div>
+          <h3>VPP Platform</h3>
+          <p>Aggregates distributed generation and flexible demand across a community for dispatch, trading, and value-sharing.</p>
         </div>
+      </div>
+      <div class="svc-footnote">
+        <strong>The AI Mechanism:</strong> AI is not a bolt-on feature across these platforms — it is the mechanism that makes each one viable at public sector and community budgets. Manual equivalents of financial modelling, document drafting, and generation forecasting exist today, but require specialist consultants at costs this client base cannot sustain at scale. AI is what makes these platforms affordable and fast enough to be genuinely adopted.
       </div>
     </div>
   </section>
@@ -384,7 +390,7 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
             <label>Contact Email</label>
             <input type="email" required placeholder="you@organisation.org">
           </div>
-          <button type="button" class="intake-submit">Submit for ClimStudio Assessment &amp; Grant Matching</button>
+          <button type="button" class="intake-submit">Submit for Assessment &amp; Grant Matching</button>
         </form>
       </div>
     </div>
@@ -451,7 +457,7 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
       <div class="flow-strip">
         <span class="flow-step">Submitted Project</span>
         <span class="flow-arrow">→</span>
-        <span class="flow-step">ClimStudio Assessment Engine</span>
+        <span class="flow-step">Climate Risk &amp; Financial Assessment Engine</span>
         <span class="flow-arrow">→</span>
         <span class="flow-step">Public / Private Co-Investment</span>
       </div>
@@ -459,7 +465,7 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
       <div class="pillar-list">
         <div class="pillar-item">
           <h4>Bankability by Design</h4>
-          <p>Evaluates campus decarbonisation and climate tech assets with financial QA, ESG indexing, and climate risk profiling powered by the embedded ClimStudio engine.</p>
+          <p>Evaluates campus decarbonisation and climate tech assets with financial QA, ESG indexing, and climate risk profiling.</p>
         </div>
         <div class="pillar-item">
           <h4>Public Sector Grant Matching</h4>
@@ -471,7 +477,7 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
         </div>
       </div>
 
-      <p class="cc-note">In strategic alignment with academic research initiatives (such as Horizon Europe's Climinvest framework with partners at the University of Glasgow), Phoenix CleanTech Capital embeds ClimStudio to deliver automated financial QA and risk verification.</p>
+      <p class="cc-note">An advanced climate risk, adaptation, and financial quality assurance assessment engine is currently in development alongside leading university research frameworks.</p>
     </div>
   </section>
 
@@ -511,7 +517,7 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
         <div class="cp-details">
           <div class="cp-detail">
             <div class="cp-detail-label">Entity</div>
-            <div class="cp-detail-val">Phoenix Cleantech Ltd (SC894315)</div>
+            <div class="cp-detail-val">Phoenix Cleantech Ltd</div>
           </div>
           <div class="cp-detail">
             <div class="cp-detail-label">Primary Client Focus</div>
@@ -543,7 +549,7 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
               <option value="">Select briefing topic</option>
               <option>Campus / Estate Decarbonisation</option>
               <option>Submit a Climate Tech Project</option>
-              <option>Phoenix Capital / ClimStudio QA</option>
+              <option>Phoenix Capital Assessment Framework</option>
               <option>CleanCloud AI Gateway API Access</option>
             </select>
           </div>
@@ -564,7 +570,7 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
     <div class="footer-top">
       <div>
         <div class="footer-brand-name">Phoenix CleanTech Group</div>
-        <div class="footer-tagline">Operating Division of Phoenix Cleantech Ltd (SC894315)</div>
+        <div class="footer-tagline">Operating Division of Phoenix Cleantech Ltd</div>
       </div>
       <div class="footer-cols">
         <div class="fc">
@@ -582,7 +588,7 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
       </div>
     </div>
     <div class="footer-bottom">
-      <div>&copy; 2026 Phoenix Cleantech Ltd (SC894315). All rights reserved.</div>
+      <div>&copy; 2026 Phoenix Cleantech Ltd. All rights reserved.</div>
       <div>Solar · Wind · BESS · Climate Tech Innovation</div>
     </div>
   </div>
