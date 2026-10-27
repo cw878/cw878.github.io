@@ -205,7 +205,6 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
   .nav-links{display:none;}
   .section-header{flex-wrap:wrap;gap:0.5rem;}
   .section-header h2{white-space:normal;}
-  .legal-page section{padding:clamp(2rem,5vw,3.5rem) clamp(1rem,3vw,2rem) !important;}
 }
 @media(max-width:600px){
   .svc-cards{grid-template-columns:1fr;}
@@ -411,14 +410,8 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
               <input type="email" required placeholder="you@organisation.org">
             </div>
 
-            <!-- AUDIT FIX A: Consistent check and micro-notice on intake form -->
-            <div style="display:flex;align-items:flex-start;gap:0.5rem;margin:0.2rem 0;">
-              <input type="checkbox" id="intakeConsent" style="margin-top:0.2rem;width:14px;height:14px;accent-color:var(--clay);flex-shrink:0;">
-              <label for="intakeConsent" style="font-size:0.75rem;color:var(--ink-mid);font-weight:400;text-transform:none;letter-spacing:normal;cursor:pointer;">I'd like to receive occasional updates from Phoenix CleanTech Group.</label>
-            </div>
-
-            <p style="font-size:0.72rem;color:var(--ink-mid);line-height:1.4;">
-              By submitting this form, you consent to processing your project details in accordance with our <a href="javascript:void(0)" onclick="showLegalPage('privacy')" style="color:var(--clay);text-decoration:underline;">Privacy Policy</a> and <a href="javascript:void(0)" onclick="showLegalPage('terms')" style="color:var(--clay);text-decoration:underline;">Terms</a>.
+            <p style="font-size:0.75rem;color:var(--ink-light);line-height:1.5;">
+              By submitting your project, you agree to our <a href="javascript:void(0)" onclick="showLegalPage('terms')" style="color:var(--clay);text-decoration:underline;">Terms &amp; Conditions</a> and acknowledge our <a href="javascript:void(0)" onclick="showLegalPage('privacy')" style="color:var(--clay);text-decoration:underline;">Privacy Policy</a>.
             </p>
 
             <button type="button" class="intake-submit">Submit for Assessment &amp; Grant Matching</button>
@@ -789,19 +782,16 @@ footer{background:var(--forest-deep);color:var(--sage);padding:3rem 0 1.8rem;}
 </div>
 
 <script>
-// AUDIT FIX B: Clear main nav highlighting when viewing legal pages
 function showLegalPage(pageId) {
   document.getElementById('main-content-flow').style.display = 'none';
   document.querySelectorAll('.legal-page').forEach(el => el.classList.remove('active'));
   document.getElementById('page-' + pageId).classList.add('active');
-  document.querySelectorAll('.nav-links a').forEach(a => a.style.opacity = '0.65');
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
 function showMainSections() {
   document.querySelectorAll('.legal-page').forEach(el => el.classList.remove('active'));
   document.getElementById('main-content-flow').style.display = 'block';
-  document.querySelectorAll('.nav-links a').forEach(a => a.style.opacity = '1');
 }
 
 function setCookieConsent(accepted) {
